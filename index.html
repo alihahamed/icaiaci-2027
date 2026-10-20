@@ -102,6 +102,13 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .alt { background: var(--ink-2); border-block: 1px solid var(--line); }
 .muted { color: var(--muted); }
 
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.prose p + p { margin-top: 1rem; }
+.prose p { color: var(--muted); }
+.prose strong { color: var(--text); font-weight: 500; }
+.list { list-style: none; padding: 0; counter-reset: n; }
+.list li { counter-increment: n; display: grid; grid-template-columns: 2.4rem 1fr; padding: .85rem 0; border-top: 1px solid var(--line); color: var(--muted); }
+.list li::before { content: counter(n, decimal-leading-zero); font: .78rem var(--mono); color: var(--gold); padding-top: .2rem; }
 
 
 
