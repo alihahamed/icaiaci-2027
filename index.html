@@ -118,6 +118,11 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .themes .mono { color: var(--cyan); }
 .themes h3 { font: 400 1.5rem/1.1 var(--serif); }
 
+.tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
+.track { padding: 1.8rem; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); transition: border-color .25s, transform .25s; }
+.track:hover { border-color: rgba(232,169,44,.45); transform: translateY(-4px); }
+.track .mono { color: var(--gold); }
+.track h3 { font: 400 1.75rem/1.1 var(--serif); margin: .6rem 0 1.2rem; }
 
 
 
