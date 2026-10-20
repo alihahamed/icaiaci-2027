@@ -197,6 +197,14 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
 .foot address { font-style: normal; color: var(--muted); }
 .legal { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .85rem; }
 
+/* reveal: only hidden once JS has marked the page, so no-JS still shows content */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .emblem::before, .emblem::after { animation: none; }
+}
 
 @media (max-width: 900px) {
   .menu-btn { display: block; }
@@ -208,6 +216,7 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
 </style>
 </head>
 <body>
+<script>document.body.classList.add('js')</script>
 <a class="skip" href="#main">Skip to content</a>
 
 <header>
@@ -618,6 +627,14 @@ const btn = document.querySelector('.menu-btn'), menu = document.getElementById(
 btn.addEventListener('click', () => btn.setAttribute('aria-expanded', menu.classList.toggle('open')));
 menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
 
+// reveal on scroll + highlight the nav link of the section in view
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+const links = [...menu.querySelectorAll('a')];
+const spy = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id));
+}), { rootMargin: '-45% 0px -50% 0px' });
+document.querySelectorAll('main section[id], footer[id]').forEach(s => spy.observe(s));
 </script>
 </body>
 </html>
