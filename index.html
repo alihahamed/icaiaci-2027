@@ -40,6 +40,20 @@ a { color: inherit; }
 .skip { position: absolute; left: -999px; top: 0; background: var(--gold-fill); color: var(--text); padding: .5rem 1rem; z-index: 99; }
 .skip:focus { left: 1rem; }
 
+/* nav */
+header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(248, 246, 241, .82); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4.25rem; }
+.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
+.brand img { width: 40px; height: 40px; border-radius: 50%; clip-path: circle(50%); }
+.brand small { display: block; font: 400 .7rem var(--mono); color: var(--muted); letter-spacing: .06em; }
+.nav ul { display: flex; gap: 1.6rem; list-style: none; padding: 0; }
+.nav ul a { text-decoration: none; font-size: .9rem; color: var(--muted); transition: color .2s; }
+.nav ul a:hover, .nav ul a.active { color: var(--text); }
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.25rem; border-radius: 999px; font: 500 .92rem var(--sans); text-decoration: none; border: 1px solid var(--line); transition: transform .2s, background .2s, border-color .2s; }
+.btn:hover { transform: translateY(-2px); border-color: rgba(232,169,44,.5); }
+.btn-gold { background: var(--gold-fill); color: var(--text); border-color: var(--gold-fill); }
+.btn-gold:hover { background: #f5bb46; }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: .45rem .6rem; cursor: pointer; }
 
 
 
