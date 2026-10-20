@@ -167,7 +167,21 @@ h1 em { color: var(--gold); }
 </main>
 
 
+<script>
+// countdown to the inaugural ceremony (IST)
+const start = new Date('2027-01-28T09:30:00+05:30');
+const cd = document.getElementById('countdown');
+const units = { d: 86400000, h: 3600000, m: 60000, s: 1000 };
+function tick() {
+  let ms = Math.max(0, start - Date.now());
+  for (const [k, v] of Object.entries(units)) {
+    cd.querySelector(`[data-u="${k}"]`).textContent = String(Math.floor(ms / v)).padStart(2, '0');
+    ms %= v;
+  }
+}
+tick(); setInterval(tick, 1000);
 
 
+</script>
 </body>
 </html>
