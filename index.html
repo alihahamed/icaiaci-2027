@@ -206,12 +206,34 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
   .emblem::before, .emblem::after { animation: none; }
 }
 
+@media (max-width: 1080px) {
+  .nav ul { gap: 1.1rem; }
+}
+@media (max-width: 1020px) {
+  .hero-grid, .two, .days { grid-template-columns: 1fr; }
+  .emblem { width: min(80%, 360px); grid-row: 1; }
+  .themes { grid-template-columns: repeat(2, 1fr); }
+  .themes div:last-child { grid-column: span 2; }
+  .tracks, .speakers, .tiles { grid-template-columns: repeat(2, 1fr); }
+  .sec-head { grid-template-columns: 1fr; gap: .5rem; }
+  .foot { grid-template-columns: 1fr 1fr; }
+}
 @media (max-width: 900px) {
   .menu-btn { display: block; }
   .nav ul { display: none; position: absolute; top: 4.25rem; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--ink); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; }
   .nav ul.open { display: flex; }
   .nav ul a { display: block; padding: .7rem 0; font-size: 1rem; }
   .nav > .btn-gold { display: none; }
+}
+@media (max-width: 600px) {
+  .themes, .tracks, .speakers, .tiles, .foot { grid-template-columns: 1fr; }
+  .themes div:last-child { grid-column: auto; }
+  .themes div { min-height: 0; }
+  .countdown div { min-width: 0; flex: 1; }
+  .slot { grid-template-columns: 1fr; gap: .2rem; padding-inline: 1.2rem; }
+  .convener { grid-template-columns: 1fr; padding: 1.5rem; }
+  .dates div { padding-inline: 1.1rem; }
+  .eyebrow span + span::before { display: none; }
 }
 </style>
 </head>
