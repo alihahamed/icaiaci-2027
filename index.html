@@ -110,6 +110,13 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .list li { counter-increment: n; display: grid; grid-template-columns: 2.4rem 1fr; padding: .85rem 0; border-top: 1px solid var(--line); color: var(--muted); }
 .list li::before { content: counter(n, decimal-leading-zero); font: .78rem var(--mono); color: var(--gold); padding-top: .2rem; }
 
+.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+.chip { padding: .35rem .8rem; border: 1px solid var(--line); border-radius: 999px; font-size: .85rem; color: var(--muted); }
+.themes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 4rem; }
+.themes div { background: var(--ink-3); padding: 1.6rem 1.2rem; min-height: 9rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; transition: background .25s; }
+.themes div:hover { background: var(--gold-soft); }
+.themes .mono { color: var(--cyan); }
+.themes h3 { font: 400 1.5rem/1.1 var(--serif); }
 
 
 
