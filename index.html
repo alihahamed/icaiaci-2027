@@ -94,6 +94,9 @@ h2 { font: 400 clamp(2rem, 4.4vw, 3.4rem)/1.05 var(--serif); }
 h2 em { color: var(--gold); }
 .sec-head p { margin-top: 1rem; color: var(--muted); max-width: 46rem; }
 .sec-head p + p { margin-top: .8rem; }
+.hl { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0 2rem; }
+.hl li { display: flex; gap: .7rem; padding: .85rem 0; border-top: 1px solid var(--line); }
+.hl li::before { content: "✦"; color: var(--gold-fill); }
 h3 { font: 600 1.08rem/1.35 var(--sans); }
 h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem; }
 .alt { background: var(--ink-2); border-block: 1px solid var(--line); }
