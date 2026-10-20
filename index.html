@@ -198,6 +198,13 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
 .legal { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .85rem; }
 
 
+@media (max-width: 900px) {
+  .menu-btn { display: block; }
+  .nav ul { display: none; position: absolute; top: 4.25rem; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--ink); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; }
+  .nav ul.open { display: flex; }
+  .nav ul a { display: block; padding: .7rem 0; font-size: 1rem; }
+  .nav > .btn-gold { display: none; }
+}
 </style>
 </head>
 <body>
@@ -606,6 +613,10 @@ function tick() {
 }
 tick(); setInterval(tick, 1000);
 
+// mobile menu
+const btn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
+btn.addEventListener('click', () => btn.setAttribute('aria-expanded', menu.classList.toggle('open')));
+menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
 
 </script>
 </body>
