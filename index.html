@@ -134,6 +134,23 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .speaker .talk { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font: italic 400 1.25rem/1.2 var(--serif); }
 .speaker .talk span { display: block; font: normal .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
 
+/* programme */
+.days { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
+.day { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--ink-3); }
+.day-head { padding: 1.3rem 1.6rem; background: var(--text); color: #fff; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .3rem 1rem; }
+.day-head h3 { font: 400 2rem var(--serif); }
+.day-head span { color: #f3c76a; font-weight: 500; }
+.slot { display: grid; grid-template-columns: 11.5rem 1fr; gap: 1rem; padding: 1.1rem 1.6rem; border-top: 1px solid var(--line); font-size: 1.02rem; }
+.slot time { font: 500 .9rem/1.7 var(--mono); color: var(--text); }
+.slot.brk { background: var(--ink); color: var(--muted); }
+.slot.key { box-shadow: inset 4px 0 0 var(--gold-fill); }
+.slot.key b { display: inline-block; font: 600 .72rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--text); background: var(--gold-soft); border: 1px solid rgba(232,169,44,.5); border-radius: 6px; padding: .1rem .5rem; margin-bottom: .35rem; }
+.slot.key strong { display: block; font-weight: 600; line-height: 1.4; }
+.slot small { display: block; color: var(--muted); font-size: .9rem; margin-top: .2rem; }
+.parallel { display: grid; gap: .6rem; margin-top: .8rem; }
+.parallel > span { display: block; padding: .7rem .9rem; border: 1px solid var(--line); border-left: 3px solid var(--cyan); border-radius: 0 8px 8px 0; font-size: .93rem; line-height: 1.45; }
+.parallel > span b { display: block; font-weight: 600; color: var(--text); }
+.parallel > span em { font-style: normal; color: var(--muted); }
 
 
 
