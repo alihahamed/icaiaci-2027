@@ -124,6 +124,15 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .track .mono { color: var(--gold); }
 .track h3 { font: 400 1.75rem/1.1 var(--serif); margin: .6rem 0 1.2rem; }
 
+/* keynotes */
+.speakers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+.speaker { padding: 1.6rem; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); display: flex; flex-direction: column; gap: .8rem; }
+.avatar { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 400 1.6rem var(--serif); color: var(--text); background: conic-gradient(from 200deg, #f3c76a, #9fe0f3, #a9c3f7, #f3c76a); }
+.speaker .org { color: var(--muted); font-size: .9rem; }
+.speaker .exp { font-size: .86rem; color: var(--muted); }
+.speaker .exp b { color: var(--text); font-weight: 600; }
+.speaker .talk { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font: italic 400 1.25rem/1.2 var(--serif); }
+.speaker .talk span { display: block; font: normal .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
 
 
 
