@@ -161,6 +161,23 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .award { display: flex; align-items: center; gap: .7rem; padding: .9rem 1.3rem; border: 1px solid rgba(232,169,44,.35); border-radius: 999px; }
 .award svg { color: var(--gold); flex: none; }
 
+/* committee */
+.convener { display: grid; grid-template-columns: auto 1fr; gap: 1.6rem; align-items: center; padding: 2rem; border-radius: 20px; border: 1px solid rgba(232,169,44,.35); background: linear-gradient(120deg, var(--gold-soft), transparent 60%); margin-bottom: 3rem; }
+.convener .avatar { width: 84px; height: 84px; font-size: 2rem; }
+.convener h3 { font: 400 2rem/1.1 var(--serif); margin: .2rem 0 .4rem; }
+.role { padding: 1.3rem 0; border-top: 1px solid var(--line); }
+.role .mono { color: var(--gold); margin-bottom: .5rem; display: block; }
+.role p { font-weight: 500; }
+.role p small { display: block; font-weight: 400; color: var(--muted); font-size: .86rem; }
+.role p + p { margin-top: .6rem; }
+.sub { font: 400 1.9rem var(--serif); margin-bottom: 1.4rem; }
+.advisory { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
+.member { display: flex; gap: 1rem; padding: 1.3rem; border: 1px solid var(--line); border-radius: 16px; background: var(--ink-3); transition: border-color .25s; }
+.member:hover { border-color: rgba(11,127,166,.45); }
+.member .avatar { flex: none; width: 48px; height: 48px; font-size: 1.15rem; }
+.member h4 { font-weight: 600; font-size: 1rem; }
+.member p { color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.member .tag { margin-top: .5rem; display: inline-block; font: .68rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--cyan); }
 
 
 
