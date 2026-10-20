@@ -55,6 +55,35 @@ header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); bac
 .btn-gold:hover { background: #f5bb46; }
 .menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: .45rem .6rem; cursor: pointer; }
 
+/* hero */
+.hero { position: relative; padding: clamp(3rem, 8vw, 6.5rem) 0 4rem; overflow: hidden; isolation: isolate; }
+.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(60% 55% at 78% 40%, rgba(59,123,240,.16), transparent 70%),
+    radial-gradient(40% 40% at 10% 90%, rgba(232,169,44,.14), transparent 70%),
+    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 56px 56px,
+    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 56px 56px;
+  mask-image: radial-gradient(90% 80% at 50% 40%, #000 40%, transparent 100%); }
+.hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 3rem; align-items: center; }
+.eyebrow { display: flex; flex-wrap: wrap; gap: .5rem 1rem; color: var(--gold); margin-bottom: 1.4rem; }
+.eyebrow span + span::before { content: "/"; margin-right: 1rem; color: var(--muted); }
+h1 { font: 400 clamp(2.3rem, 5vw, 4.3rem)/1.05 var(--serif); letter-spacing: -.01em; }
+h1 em { color: var(--gold); }
+.lede { margin-top: 1.5rem; max-width: 36rem; color: var(--muted); font-size: 1.08rem; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
+.countdown { display: flex; gap: .6rem; margin-top: 2.5rem; }
+.countdown div { min-width: 4.6rem; padding: .7rem .5rem; text-align: center; border: 1px solid var(--line); border-radius: 12px; background: var(--ink-3); box-shadow: 0 6px 20px -12px rgba(13,24,56,.25); }
+.countdown b { display: block; font: 400 2rem/1 var(--serif); font-variant-numeric: tabular-nums; }
+.countdown span { color: var(--muted); font-size: .66rem; }
+.emblem { position: relative; width: min(100%, 440px); aspect-ratio: 1; justify-self: center; }
+.emblem img { position: absolute; inset: 7%; width: 86%; height: 86%; border-radius: 50%; clip-path: circle(50%); box-shadow: 0 30px 70px -24px rgba(13,40,110,.55); }
+.emblem::before, .emblem::after { content: ""; position: absolute; inset: 0; border-radius: 50%; }
+.emblem::before { border: 1px dashed rgba(156,98,6,.5); animation: spin 60s linear infinite; }
+.emblem::after { inset: 3%; border: 1px solid var(--line); border-top-color: var(--cyan); animation: spin 14s linear infinite reverse; }
+@keyframes spin { to { transform: rotate(1turn); } }
+.support { display: flex; align-items: center; gap: 1rem 1.2rem; margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--line); color: var(--muted); flex-wrap: wrap; }
+.anrf { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: .45rem .8rem; }
+.anrf img { height: 46px; width: auto; }
 
 
 
