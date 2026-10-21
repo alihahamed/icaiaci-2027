@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 <style>
 :root {
   --ink: #f8f6f1;
@@ -23,9 +23,10 @@
   --gold-soft: rgba(232, 169, 44, .16);
   --blue: #1f5fd6;
   --cyan: #0b7fa6;
-  --serif: "Instrument Serif", Georgia, serif;
-  --sans: "IBM Plex Sans", system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, monospace;
+  /* Times New Roman everywhere; Tinos is its metric-compatible fallback where TNR is not installed (Android, Linux) */
+  --serif: "Times New Roman", Tinos, Times, serif;
+  --sans: var(--serif);
+  --mono: var(--serif);
   --wrap: min(1180px, 100% - 2rem);
 }
 * { box-sizing: border-box; margin: 0; }
