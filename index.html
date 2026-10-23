@@ -191,6 +191,24 @@ h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem
 .panel + .panel { margin-top: 1.2rem; }
 .panel h3 { font: 400 1.6rem var(--serif); margin-bottom: .6rem; }
 .panel .tba { display: inline-block; margin-top: 1rem; }
+.panel.note { border-left: 4px solid var(--gold-fill); }
+
+/* registration */
+.fees-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); }
+.fees { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
+.fees th, .fees td { padding: 1.1rem 1.6rem; text-align: left; border-top: 1px solid var(--line); }
+.fees thead th { border-top: 0; background: var(--text); color: #fff; font-weight: 700; }
+.fees tbody th { font-weight: 400; }
+.fees td { font-weight: 700; white-space: nowrap; }
+.fees tbody tr:last-child { background: var(--gold-soft); }
+@media (max-width: 600px) {
+  .fees { font-size: .92rem; }
+  .fees th, .fees td { padding: .8rem .6rem; }
+  .fees th:first-child { padding-left: 1rem; }
+}
+.guide { padding-left: 1.2rem; }
+.guide li { padding: .45rem 0; color: var(--muted); text-align: justify; hyphens: auto; }
+.guide li::marker { color: var(--gold-fill); }
 
 /* footer */
 footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
@@ -257,6 +275,7 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
       <li><a href="#programme">Programme</a></li>
       <li><a href="#committee">Committee</a></li>
       <li><a href="#dates">Dates</a></li>
+      <li><a href="#registration">Registration</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <a class="btn btn-gold" href="#registration">Register</a>
@@ -548,11 +567,6 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
           <div><span>Early-Bird Registration</span><span class="tba">To be announced</span></div>
         </div>
         <div class="reveal">
-          <div class="panel" id="registration">
-            <h3>Registration</h3>
-            <p class="muted">Registration details, categories, fees, payment instructions, and deadlines will be announced on the conference website.</p>
-            <span class="tba">Registration Opening: To be announced</span>
-          </div>
           <div class="panel">
             <h3>Paper Submission</h3>
             <p class="muted">Authors are invited to submit original research contributions relevant to the conference themes and tracks. Detailed information regarding paper format, page limit, submission portal, review procedure, camera-ready submission and publication requirements will be announced separately.</p>
@@ -568,10 +582,51 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
     </div>
   </section>
 
-  <section id="host" class="alt">
+  <section id="registration" class="alt">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="mono">08 / The Host</span>
+        <span class="mono">08 / Registration</span>
+        <div><h2>Registration <em>Fee</em></h2></div>
+      </div>
+      <div class="fees-wrap reveal">
+        <table class="fees">
+          <thead><tr><th scope="col">Category</th><th scope="col">Indian Participants</th><th scope="col">International Participants</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">UG / PG Students</th><td>₹2,000</td><td>USD 75</td></tr>
+            <tr><th scope="row">Research Scholars</th><td>₹3,000</td><td>USD 100</td></tr>
+            <tr><th scope="row">Faculty / Academicians</th><td>₹4,000</td><td>USD 150</td></tr>
+            <tr><th scope="row">Industry Professionals</th><td>₹5,000</td><td>USD 200</td></tr>
+            <tr><th scope="row">Attendee Only (No Paper Presentation)</th><td>₹1,000</td><td>USD 50</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="two" style="margin-top:3rem">
+        <div class="reveal">
+          <h3 class="mono">Registration Guidelines</h3>
+          <ul class="guide">
+            <li>At least one author of each accepted paper must complete registration and present the paper at the conference.</li>
+            <li>Each registration covers one paper, subject to the conference registration policy.</li>
+            <li>Additional paper registration, if permitted, will be charged separately.</li>
+            <li>Registration includes participation in the technical sessions and a conference certificate. Meals and conference materials will be provided as specified by the organizers.</li>
+            <li>Selected papers will be considered for publication through the applicable publication route, subject to peer-review outcomes, publisher approval, quality requirements, and the relevant publication terms.</li>
+            <li>IEEE Xplore® publication and Springer proceedings publication are not guaranteed unless formally approved and confirmed by the respective publisher.</li>
+            <li>Registration fees are non-refundable, subject to the conference's published cancellation policy.</li>
+          </ul>
+        </div>
+        <div class="reveal">
+          <div class="panel note">
+            <h3>Publication Note</h3>
+            <p class="muted">The conference is exploring publication opportunities with IEEE and Springer Nature. Further details will be announced on the official conference website after formal confirmation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="host">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="mono">09 / The Host</span>
         <div>
           <h2>About Yenepoya Institute <em>of Technology</em></h2>
           <p>Yenepoya Institute of Technology (YIT) is located at Thodar, Moodbidri, Mangaluru, Karnataka.</p>
