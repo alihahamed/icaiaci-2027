@@ -82,7 +82,7 @@ h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; font-weight: 700;
 .hero .logos, .hero .acr, .hero h1, .hero .chips, .hero .ctas, .stats { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
 .hero .acr { animation-delay: .1s; } .hero h1 { animation-delay: .2s; } .hero .chips { animation-delay: .32s; } .hero .ctas { animation-delay: .44s; } .stats { animation-delay: .56s; }
 @supports (animation-timeline: view()) {
-  main h2, main h3, main .eyebrow, .narrow > p, .ticks li, .numbered li, .pills, .track, .speakers li, .tl, .feat, .awards li, .patrons li, .roles li, .people li, .dates li, .fee, .note {
+  main h2, main h3, main .eyebrow, .narrow > p, .ticks li, .numbered li, .pills, .track, .speakers li, .tl, .feat, .facts li, .step, .awards li, .patrons li, .roles li, .people li, .dates li, .fee, .note {
     animation: up linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -125,6 +125,19 @@ h3.center { text-align: center; }
 .track h3 { margin: .6rem 0 1rem; text-align: left; }
 .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
 .tags li { padding: .25rem .85rem; border-radius: 8px; background: var(--tint); border: 1px solid var(--rule); font-size: 1.05rem; text-align: left; }
+
+/* submission guidelines */
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2.2rem 0 1rem; }
+.facts li { text-align: center; background: #fff; border-radius: 16px; padding: 1.3rem 1rem; box-shadow: 0 1px 2px rgba(11,34,87,.05), 0 8px 24px rgba(11,34,87,.07); }
+.facts b { display: block; font-size: 1.55rem; line-height: 1.25; color: var(--navy); }
+.facts span { display: block; margin-top: .3rem; color: var(--muted); font-size: 1.05rem; line-height: 1.4; }
+.steps { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+.step h3 { margin: 2rem 0 .5rem; }
+.soon { display: inline-block; margin-top: .8rem; padding: .2rem .9rem; border-radius: 999px; background: #fbf0d4; color: var(--gold-text); font-weight: 700; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; }
+.links { display: grid; gap: .6rem; margin-top: 1rem; }
+.links a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem 1.1rem; border-radius: 12px; background: #fff; border: 1px solid var(--rule); color: var(--navy); font-weight: 700; text-decoration: none; transition-property: border-color, transform, box-shadow; transition-duration: .2s; transition-timing-function: ease-out; }
+.links a::after { content: "↗"; color: var(--teal); }
+.links a:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(11,34,87,.1); }
 
 /* speakers */
 .speakers { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; margin-top: 2rem; }
@@ -243,7 +256,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
   .stats div:nth-child(3) { border-left: 0; }
   .stats b { font-size: 2.1rem; }
   section { padding: 3.5rem 0; }
-  .ticks, .numbered, .tracks, .speakers, .feats, .feats.three, .people, .awards, .patrons { grid-template-columns: 1fr; }
+  .ticks, .numbered, .tracks, .speakers, .feats, .feats.three, .people, .awards, .patrons, .facts, .steps { grid-template-columns: 1fr; }
   .tl { padding: .5rem 1.2rem; }
   .tl > li { grid-template-columns: 1fr; gap: .2rem; }
   th, td { padding: .75rem .8rem; }
@@ -258,6 +271,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     <a class="brand" href="#top"><img src="assets/yit-logo.svg" alt="Yenepoya Institute of Technology" width="236" height="54"></a>
     <ul>
       <li><a href="#papers">Call for Papers</a></li>
+      <li><a href="#submission">Submission</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#speakers">Speakers</a></li>
       <li><a href="#programme">Programme</a></li>
@@ -344,7 +358,36 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="about" class="alt">
+  <section id="submission" class="alt">
+    <div class="wrap narrow">
+      <p class="eyebrow">For authors</p>
+      <h2>Submission Guidelines</h2>
+      <p>Full-length, high-quality, original, and previously unpublished experimental or theoretical research articles with a maximum of 6 (Six) pages and a minimum of 4 (Four) pages, including figures, tables, and references, as per the Conference template (MS Word or LaTeX).</p>
+      <ul class="facts">
+        <li><b>4–6 pages</b><span>Including figures, tables &amp; references</span></li>
+        <li><b>MS Word / LaTeX</b><span>As per the Conference template</span></li>
+        <li><b>Microsoft CMT</b><span>Submission &amp; peer review</span></li>
+      </ul>
+      <div class="steps">
+        <div class="step">
+          <h3>Where to Submit</h3>
+          <p>The CMT submission link will be available soon.</p>
+          <span class="soon">Coming soon</span>
+        </div>
+        <div class="step">
+          <h3>How to Submit</h3>
+          <p>Authors must have a valid CMT login to proceed with submission.</p>
+          <ul class="links">
+            <li><a href="https://cmt3.research.microsoft.com/docs/help/general/account-creation.html" target="_blank" rel="noopener">Create a CMT account</a></li>
+            <li><a href="https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html" target="_blank" rel="noopener">Instructions for submitting a paper</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><b>Acknowledgement:</b> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
+    </div>
+  </section>
+
+  <section id="about">
     <div class="wrap">
       <p class="eyebrow">Welcome</p>
       <h2>Welcome to ICAIACI–2027</h2>
@@ -371,7 +414,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section>
+  <section class="alt">
     <div class="wrap">
       <p class="eyebrow">Overview</p>
       <h2>About the Conference</h2>
@@ -398,7 +441,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="speakers" class="alt">
+  <section id="speakers">
     <div class="wrap">
       <p class="eyebrow">Speakers</p>
       <h2>Keynote Speakers &amp; Resource Persons</h2>
@@ -421,7 +464,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="programme">
+  <section id="programme" class="alt">
     <div class="wrap narrow">
       <p class="eyebrow">Schedule</p>
       <h2>Technical Programme</h2>
@@ -461,7 +504,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="sessions" class="alt">
+  <section id="sessions">
     <div class="wrap">
       <p class="eyebrow">Beyond the papers</p>
       <h2>Special Sessions</h2>
@@ -494,7 +537,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="committee">
+  <section id="committee" class="alt">
     <div class="wrap">
       <p class="eyebrow">People</p>
       <h2>Committee</h2>
@@ -541,7 +584,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="dates" class="alt">
+  <section id="dates">
     <div class="wrap narrow">
       <p class="eyebrow">Mark your calendar</p>
       <h2>Important Dates</h2>
@@ -556,14 +599,14 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
 
       <h3>Paper Submission</h3>
       <p>Authors are invited to submit original research contributions relevant to the conference themes and tracks. Detailed information regarding paper format, page limit, submission portal, review procedure, camera-ready submission and publication requirements will be announced separately.</p>
-      <p><b>Paper Submission Portal:</b> To be announced</p>
+      <p><b>Paper Submission Portal:</b> Microsoft CMT — the submission link will be available soon. See the <a href="#submission">Submission Guidelines</a>.</p>
 
       <h3>Expected Participation</h3>
       <p>ICAIACI–2027 aims to attract researchers, academicians, scientists, industry professionals, research scholars, and students from India and abroad. The conference anticipates approximately 500 research paper submissions, with around 100 papers expected to be selected for presentation.</p>
     </div>
   </section>
 
-  <section id="registration">
+  <section id="registration" class="alt">
     <div class="wrap narrow">
       <p class="eyebrow">Join us</p>
       <h2>Registration Fee</h2>
@@ -594,7 +637,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="host" class="alt">
+  <section id="host">
     <div class="wrap">
       <p class="eyebrow">The host</p>
       <h2>About Yenepoya Institute of Technology</h2>
@@ -637,13 +680,6 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="acknowledgement">
-    <div class="wrap narrow">
-      <p class="eyebrow">Peer review</p>
-      <h2>Acknowledgement</h2>
-      <p class="note">The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
-    </div>
-  </section>
 </main>
 
 <footer id="contact">
