@@ -5,701 +5,633 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ICAIACI–2027 · Yenepoya Institute of Technology</title>
 <meta name="description" content="International Conference on Artificial Intelligence and Advanced Computational Intelligence, 28–29 January 2027, Yenepoya Institute of Technology, Moodbidri, Karnataka, India.">
-<meta name="theme-color" content="#f8f6f1">
+<meta name="theme-color" content="#ffffff">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tinos:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ink: #f8f6f1;
-  --ink-2: #efece4;
-  --ink-3: #ffffff;
-  --line: rgba(16, 32, 72, .12);
-  --text: #0d1838;
-  --muted: #56617c;
-  --gold: #9c6206;
-  --gold-fill: #e8a92c;
-  --gold-soft: rgba(232, 169, 44, .16);
-  --blue: #1f5fd6;
-  --cyan: #0b7fa6;
+  --ink: #14213d;
+  --muted: #4a5368;
+  --navy: #0b2257;
+  --deep: #06143a;
+  --teal: #0e7f97;
+  --gold: #d9a227;
+  --gold-text: #8a5a00;
+  --rule: #e1e5ee;
+  --tint: #f4f6fb;
+  --paper: #ffffff;
   /* Times New Roman everywhere; Tinos is its metric-compatible fallback where TNR is not installed (Android, Linux) */
-  --serif: "Times New Roman", Tinos, Times, serif;
-  --sans: var(--serif);
-  --mono: var(--serif);
-  --wrap: min(1180px, 100% - 2rem);
+  --font: "Times New Roman", Tinos, Times, serif;
+  --w: 1080px;
 }
 * { box-sizing: border-box; margin: 0; }
-html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
-body { background: var(--ink); color: var(--text); font: 400 1rem/1.65 var(--sans); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+body { background: var(--paper); color: var(--ink); font: 400 1.2rem/1.75 var(--font); }
 img { max-width: 100%; display: block; }
-a { color: inherit; }
-:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; border-radius: 4px; }
-.wrap { width: var(--wrap); margin-inline: auto; }
-.mono { font-family: var(--mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; }
-.gold { color: var(--gold); }
-.skip { position: absolute; left: -999px; top: 0; background: var(--gold-fill); color: var(--text); padding: .5rem 1rem; z-index: 99; }
-.skip:focus { left: 1rem; }
+a { color: var(--teal); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.wrap { width: min(var(--w), 100% - 2.5rem); margin-inline: auto; }
+.narrow { max-width: 860px; margin-inline: auto; }
+p, li { text-align: justify; hyphens: auto; }
+p + p { margin-top: 1rem; }
+ul, ol { padding-left: 0; list-style: none; }
+.center, .center p { text-align: center; }
 
 /* nav */
-header { position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px); background: rgba(248, 246, 241, .82); border-bottom: 1px solid var(--line); }
-.nav { display: flex; align-items: center; justify-content: space-between; gap: 1rem; height: 4.25rem; }
-.brand { display: flex; align-items: center; gap: .7rem; text-decoration: none; font-weight: 600; letter-spacing: .02em; }
-.brand img { width: 40px; height: 40px; border-radius: 50%; clip-path: circle(50%); }
-.brand small { display: block; font: 400 .7rem var(--mono); color: var(--muted); letter-spacing: .06em; }
-.nav ul { display: flex; gap: 1.6rem; list-style: none; padding: 0; }
-.nav ul a { text-decoration: none; font-size: .9rem; color: var(--muted); transition: color .2s; }
-.nav ul a:hover, .nav ul a.active { color: var(--text); }
-.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .75rem 1.25rem; border-radius: 999px; font: 500 .92rem var(--sans); text-decoration: none; border: 1px solid var(--line); transition: transform .2s, background .2s, border-color .2s; }
-.btn:hover { transform: translateY(-2px); border-color: rgba(232,169,44,.5); }
-.btn-gold { background: var(--gold-fill); color: var(--text); border-color: var(--gold-fill); }
-.btn-gold:hover { background: #f5bb46; }
-.menu-btn { display: none; background: none; border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: .45rem .6rem; cursor: pointer; }
+nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,.93); backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: .5rem 2rem; min-height: 3.8rem; flex-wrap: wrap; }
+.brand { font-weight: 700; font-size: 1.3rem; color: var(--navy); text-decoration: none; letter-spacing: .02em; }
+.brand span { color: var(--gold); }
+nav ul { display: flex; flex-wrap: wrap; justify-content: center; gap: .2rem 1.5rem; }
+nav ul a { color: var(--ink); text-decoration: none; font-size: 1.08rem; background: linear-gradient(var(--gold), var(--gold)) 0 100% / 0 2px no-repeat; transition: background-size .25s; padding-bottom: 2px; }
+nav ul a:hover { background-size: 100% 2px; color: var(--navy); }
 
-/* hero */
-.hero { position: relative; padding: clamp(3rem, 8vw, 6.5rem) 0 4rem; overflow: hidden; isolation: isolate; }
-.hero::before { content: ""; position: absolute; inset: 0; z-index: -1;
+/* hero: light, with soft drifting glows and a faint dot grid */
+.hero { position: relative; overflow: hidden; text-align: center; padding: 4rem 0 8rem; color: var(--ink);
   background:
-    radial-gradient(60% 55% at 78% 40%, rgba(59,123,240,.16), transparent 70%),
-    radial-gradient(40% 40% at 10% 90%, rgba(232,169,44,.14), transparent 70%),
-    linear-gradient(var(--line) 1px, transparent 1px) 0 0 / 56px 56px,
-    linear-gradient(90deg, var(--line) 1px, transparent 1px) 0 0 / 56px 56px;
-  mask-image: radial-gradient(90% 80% at 50% 40%, #000 40%, transparent 100%); }
-.hero-grid { display: grid; grid-template-columns: 1.25fr .9fr; gap: 3rem; align-items: center; }
-.eyebrow { display: flex; flex-wrap: wrap; gap: .5rem 1rem; color: var(--gold); margin-bottom: 1.4rem; }
-.eyebrow span + span::before { content: "/"; margin-right: 1rem; color: var(--muted); }
-h1 { font: 400 clamp(2.3rem, 5vw, 4.3rem)/1.05 var(--serif); letter-spacing: -.01em; }
-h1 em { color: var(--gold); }
-.lede { margin-top: 1.5rem; max-width: 36rem; color: var(--muted); font-size: 1.08rem; }
-.hero-cta { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: 2rem; }
-.countdown { display: flex; gap: .6rem; margin-top: 2.5rem; }
-.countdown div { min-width: 4.6rem; padding: .7rem .5rem; text-align: center; border: 1px solid var(--line); border-radius: 12px; background: var(--ink-3); box-shadow: 0 6px 20px -12px rgba(13,24,56,.25); }
-.countdown b { display: block; font: 400 2rem/1 var(--serif); font-variant-numeric: tabular-nums; }
-.countdown span { color: var(--muted); font-size: .66rem; }
-.emblem { position: relative; width: min(100%, 440px); aspect-ratio: 1; justify-self: center; }
-.emblem img { position: absolute; inset: 7%; width: 86%; height: 86%; border-radius: 50%; clip-path: circle(50%); box-shadow: 0 30px 70px -24px rgba(13,40,110,.55); }
-.emblem::before, .emblem::after { content: ""; position: absolute; inset: 0; border-radius: 50%; }
-.emblem::before { border: 1px dashed rgba(156,98,6,.5); animation: spin 60s linear infinite; }
-.emblem::after { inset: 3%; border: 1px solid var(--line); border-top-color: var(--cyan); animation: spin 14s linear infinite reverse; }
-@keyframes spin { to { transform: rotate(1turn); } }
-.support { display: flex; align-items: center; gap: 1rem 1.2rem; margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--line); color: var(--muted); flex-wrap: wrap; }
-.anrf { background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: .45rem .8rem; }
-.anrf img { height: 46px; width: auto; }
+    radial-gradient(rgba(11,34,87,.09) 1px, transparent 1.6px) 0 0 / 26px 26px,
+    linear-gradient(180deg, #f7f9ff, #ffffff); }
+.hero::before, .hero::after { content: ""; position: absolute; width: 560px; height: 560px; border-radius: 50%; filter: blur(70px); z-index: 0; animation: drift 14s ease-in-out infinite alternate; }
+.hero::before { background: rgba(80,170,230,.28); top: -220px; left: -160px; }
+.hero::after { background: rgba(240,190,80,.25); bottom: -260px; right: -160px; animation-delay: -7s; }
+@keyframes drift { to { transform: translate(60px, 40px) scale(1.08); } }
+.hero .wrap { position: relative; z-index: 1; }
+.hero p { text-align: center; }
+.logos { display: flex; justify-content: center; align-items: center; gap: 1.5rem; margin-bottom: 2.2rem; }
+.plate { background: #fff; height: 120px; display: grid; place-items: center; border-radius: 18px; padding: .6rem 1.4rem; border: 1px solid var(--rule); box-shadow: 0 1px 2px rgba(11,34,87,.06), 0 12px 30px rgba(11,34,87,.1); }
+.plate.round { width: 120px; padding: 6px; border-radius: 50%; }
+.plate .icaiaci { width: 106px; height: 106px; border-radius: 50%; }
+.plate .anrf { height: 84px; width: auto; }
+.hero .acr { display: inline-block; font-weight: 700; letter-spacing: .3em; color: var(--gold-text); font-size: 1.05rem; padding: .25rem 1rem .25rem 1.3rem; border-radius: 999px; background: #fbf0d4; }
+h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; font-weight: 700; color: var(--navy); max-width: 920px; margin: 1rem auto 0; text-wrap: balance; }
+.hero .spons { margin-top: 1rem; font-size: 1.25rem; font-weight: 700; color: var(--teal); }
+.hero .spons span { display: block; margin-top: .15rem; font-size: 1.05rem; color: var(--muted); letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin-top: 1.8rem; }
+.chip { display: inline-flex; align-items: center; gap: .55rem; padding: .45rem 1.2rem; border-radius: 999px; border: 1px solid var(--rule); background: rgba(255,255,255,.8); font-size: 1.15rem; color: var(--ink); box-shadow: 0 2px 8px rgba(11,34,87,.05); }
+.chip svg { width: 1.1rem; height: 1.1rem; stroke: var(--teal); fill: none; stroke-width: 2; flex: none; }
+.ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 2.2rem; }
+.btn { display: inline-block; padding: .75rem 1.8rem; border-radius: 999px; font-weight: 700; font-size: 1.15rem; text-decoration: none; background: var(--navy); color: #fff; transition-property: transform, box-shadow, background-color; transition-duration: .2s; transition-timing-function: ease-out; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(11,34,87,.25); }
+.btn:active { transform: scale(.96); }
+.btn.ghost { background: #fff; color: var(--navy); border: 1px solid #c9d1e2; }
+.btn.ghost:hover { background: var(--tint); box-shadow: 0 8px 20px rgba(11,34,87,.1); }
 
+/* entrance + scroll reveal (CSS only; browsers without scroll timelines just show content) */
+@keyframes up { from { opacity: 0; transform: translateY(18px); filter: blur(4px); } }
+.hero .logos, .hero .acr, .hero h1, .hero .chips, .hero .ctas, .stats { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
+.hero .acr { animation-delay: .1s; } .hero h1 { animation-delay: .2s; } .hero .chips { animation-delay: .32s; } .hero .ctas { animation-delay: .44s; } .stats { animation-delay: .56s; }
+@supports (animation-timeline: view()) {
+  main h2, main h3, main .eyebrow, .narrow > p, .ticks li, .numbered li, .pills, .track, .speakers li, .tl, .feat, .awards li, .patrons li, .roles li, .people li, .dates li, .fee, .note {
+    animation: up linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* stats strip */
+.stats { position: relative; margin-top: -4.5rem; background: #fff; border-radius: 20px; box-shadow: 0 18px 50px rgba(11,34,87,.14); display: grid; grid-template-columns: repeat(4, 1fr); padding: 1.8rem 1rem; }
+.stats div { text-align: center; padding: 0 1rem; }
+.stats div + div { border-left: 1px solid var(--rule); }
+.stats b { display: block; font-size: 2.6rem; line-height: 1.1; color: var(--navy); }
+.stats span { color: var(--muted); font-size: 1.1rem; }
 
 /* sections */
-section { padding: clamp(4rem, 9vw, 7rem) 0; }
-.sec-head { display: grid; grid-template-columns: 220px 1fr; gap: 2rem; margin-bottom: 3rem; }
-.sec-head > .mono { color: var(--gold); padding-top: .9rem; }
-h2 { font: 400 clamp(2rem, 4.4vw, 3.4rem)/1.05 var(--serif); }
-h2 em { color: var(--gold); }
-.sec-head p { margin-top: 1rem; color: var(--muted); max-width: 46rem; }
-.sec-head p + p { margin-top: .8rem; }
-.hl { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0 2rem; }
-.hl li { display: flex; gap: .7rem; padding: .85rem 0; border-top: 1px solid var(--line); }
-.hl li::before { content: "✦"; color: var(--gold-fill); }
-h3 { font: 600 1.08rem/1.35 var(--sans); }
-h3.mono { font: 500 .78rem var(--mono); color: var(--gold); margin-bottom: .6rem; }
-.alt { background: var(--ink-2); border-block: 1px solid var(--line); }
-.muted { color: var(--muted); }
-/* justified body copy, matching the conference document */
-.sec-head p, .prose p, .tile p, .panel p, .role small, .list li, .convener p { text-align: justify; hyphens: auto; }
+section { padding: 5rem 0; }
+section.alt { background: var(--tint); }
+.eyebrow { text-align: center; font-size: 1rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); }
+h2 { text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-top: .3rem; }
+h2::after { content: ""; display: block; width: 64px; height: 3px; border-radius: 3px; background: var(--gold); margin: 1rem auto 2.2rem; }
+h3 { font-size: 1.45rem; font-weight: 700; color: var(--navy); line-height: 1.3; margin: 3rem 0 1rem; }
+h3.center { text-align: center; }
 
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.prose p + p { margin-top: 1rem; }
-.prose p { color: var(--muted); }
-.prose strong { color: var(--text); font-weight: 500; }
-.list { list-style: none; padding: 0; counter-reset: n; }
-.list li { counter-increment: n; display: grid; grid-template-columns: 2.4rem 1fr; padding: .85rem 0; border-top: 1px solid var(--line); color: var(--muted); }
-.list li::before { content: counter(n, decimal-leading-zero); font: .78rem var(--mono); color: var(--gold); padding-top: .2rem; }
+/* tick lists */
+.ticks { display: grid; grid-template-columns: 1fr 1fr; gap: .7rem 2.5rem; }
+.ticks li { position: relative; padding-left: 2.2rem; text-align: left; }
+.ticks li::before { content: "✓"; position: absolute; left: 0; top: .3rem; width: 1.45rem; height: 1.45rem; border-radius: 50%; background: var(--navy); color: #fff; font-size: .85rem; display: grid; place-items: center; }
+.ticks.one { grid-template-columns: 1fr; }
 
-.chips { display: flex; flex-wrap: wrap; gap: .5rem; }
-.chip { padding: .35rem .8rem; border: 1px solid var(--line); border-radius: 999px; font-size: .85rem; color: var(--muted); }
-.themes { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; margin-bottom: 4rem; }
-.themes div { background: var(--ink-3); padding: 1.6rem 1.2rem; min-height: 9rem; display: flex; flex-direction: column; justify-content: space-between; gap: 1rem; transition: background .25s; }
-.themes div:hover { background: var(--gold-soft); }
-.themes .mono { color: var(--cyan); }
-.themes h3 { font: 400 1.5rem/1.1 var(--serif); }
+/* numbered objectives */
+.numbered { counter-reset: n; display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem 2.5rem; }
+.numbered li { counter-increment: n; position: relative; padding-left: 3.6rem; min-height: 2.6rem; }
+.numbered li::before { content: counter(n, decimal-leading-zero); position: absolute; left: 0; top: .1rem; font-size: 1.9rem; font-weight: 700; line-height: 1; color: var(--gold); }
 
-.tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; }
-.track { padding: 1.8rem; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); transition: border-color .25s, transform .25s; }
-.track:hover { border-color: rgba(232,169,44,.45); transform: translateY(-4px); }
-.track .mono { color: var(--gold); }
-.track h3 { font: 400 1.75rem/1.1 var(--serif); margin: .6rem 0 1.2rem; }
+/* pills & tracks */
+.pills { display: flex; flex-wrap: wrap; justify-content: center; gap: .7rem; }
+.pills li { padding: .45rem 1.2rem; border-radius: 999px; background: var(--navy); color: #fff; font-weight: 700; text-align: center; }
+.tracks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; margin-top: 1rem; }
+.track { border-top: 4px solid var(--c); padding-top: 1.3rem; }
+.track .num { font-size: 3.2rem; font-weight: 700; line-height: 1; color: var(--c); }
+.track h3 { margin: .6rem 0 1rem; text-align: left; }
+.tags { display: flex; flex-wrap: wrap; gap: .5rem; }
+.tags li { padding: .25rem .85rem; border-radius: 8px; background: var(--tint); border: 1px solid var(--rule); font-size: 1.05rem; text-align: left; }
 
-/* keynotes */
-.speakers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-.speaker { padding: 1.6rem; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); display: flex; flex-direction: column; gap: .8rem; }
-.avatar { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 400 1.6rem var(--serif); color: var(--text); background: conic-gradient(from 200deg, #f3c76a, #9fe0f3, #a9c3f7, #f3c76a); }
-.speaker .org { color: var(--muted); font-size: .9rem; }
-.speaker .exp { font-size: .86rem; color: var(--muted); }
-.speaker .exp b { color: var(--text); font-weight: 600; }
-.speaker .talk { margin-top: auto; padding-top: 1rem; border-top: 1px solid var(--line); font: italic 400 1.25rem/1.2 var(--serif); }
-.speaker .talk span { display: block; font: normal .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--gold); margin-bottom: .3rem; }
+/* speakers */
+.speakers { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; margin-top: 2rem; }
+.speakers li { display: grid; grid-template-columns: 64px 1fr; gap: 1.1rem; padding: 1.4rem 0; border-top: 1px solid var(--rule); text-align: left; }
+.av { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 1.35rem; background: linear-gradient(135deg, var(--navy), var(--teal)); }
+.key .av { background: linear-gradient(135deg, #b47c0c, var(--gold)); }
+.speakers b { display: block; font-size: 1.3rem; color: var(--navy); line-height: 1.35; }
+.speakers .exp { display: block; color: var(--muted); margin-top: .2rem; }
+.talk { display: inline-block; margin-top: .6rem; padding: .2rem .8rem; border-radius: 6px; background: #fbf0d4; color: var(--gold-text); font-weight: 700; font-size: 1.08rem; }
 
-/* programme */
-.days { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; align-items: start; }
-.day { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; background: var(--ink-3); }
-.day-head { padding: 1.3rem 1.6rem; background: var(--text); color: #fff; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .3rem 1rem; }
-.day-head h3 { font: 400 2rem var(--serif); }
-.day-head span { color: #f3c76a; font-weight: 500; }
-.slot { display: grid; grid-template-columns: 11.5rem 1fr; gap: 1rem; padding: 1.1rem 1.6rem; border-top: 1px solid var(--line); font-size: 1.02rem; }
-.slot time { font: 500 .9rem/1.7 var(--mono); color: var(--text); }
-.slot.brk { background: var(--ink); color: var(--muted); }
-.slot.key { box-shadow: inset 4px 0 0 var(--gold-fill); }
-.slot.key b { display: inline-block; font: 600 .72rem var(--sans); letter-spacing: .06em; text-transform: uppercase; color: var(--text); background: var(--gold-soft); border: 1px solid rgba(232,169,44,.5); border-radius: 6px; padding: .1rem .5rem; margin-bottom: .35rem; }
-.slot.key strong { display: block; font-weight: 600; line-height: 1.4; }
-.slot small { display: block; color: var(--muted); font-size: .9rem; margin-top: .2rem; }
-.parallel { display: grid; gap: .6rem; margin-top: .8rem; }
-.parallel > span { display: block; padding: .7rem .9rem; border: 1px solid var(--line); border-left: 3px solid var(--cyan); border-radius: 0 8px 8px 0; font-size: .93rem; line-height: 1.45; }
-.parallel > span b { display: block; font-weight: 600; color: var(--text); }
-.parallel > span em { font-style: normal; color: var(--muted); }
+/* programme timeline */
+.day { margin-top: 2.5rem; }
+.day-head { display: flex; align-items: center; justify-content: center; gap: .9rem; flex-wrap: wrap; margin-bottom: 1.2rem; }
+.day-head .tag { background: var(--gold); color: var(--deep); font-weight: 700; padding: .2rem 1rem; border-radius: 999px; }
+.day-head span:last-child { font-size: 1.4rem; font-weight: 700; color: var(--navy); }
+.tl { background: #fff; border-radius: 18px; box-shadow: 0 8px 30px rgba(11,34,87,.08); padding: .8rem 2rem; }
+.tl > li { display: grid; grid-template-columns: 13rem 1fr; gap: 1.5rem; padding: 1.1rem 0; text-align: left; }
+.tl > li + li { border-top: 1px solid var(--rule); }
+.tl .time { font-weight: 700; color: var(--teal); }
+.tl .what b { color: var(--navy); }
+.tl .who { display: block; color: var(--muted); }
+.tl .brk { color: var(--muted); }
+.tl .brk .what { font-weight: 700; }
+.tl ul { margin-top: .5rem; display: grid; gap: .4rem; }
+.tl ul li { position: relative; padding-left: 1.2rem; text-align: left; }
+.tl ul li::before { content: ""; position: absolute; left: 0; top: .7rem; width: .45rem; height: .45rem; border-radius: 50%; background: var(--gold); }
 
-/* special sessions */
-.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
-.tile { padding: 1.6rem; border-top: 2px solid var(--gold-fill); background: var(--ink-2); border-radius: 0 0 14px 14px; }
-.tile h3 { margin-bottom: .6rem; }
-.tile p { color: var(--muted); font-size: .93rem; }
-.awards { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2.5rem; align-items: center; }
-.award { display: flex; align-items: center; gap: .7rem; padding: .9rem 1.3rem; border: 1px solid rgba(232,169,44,.35); border-radius: 999px; }
-.award svg { color: var(--gold); flex: none; }
+/* features (special sessions, activities) */
+.feats { display: grid; grid-template-columns: 1fr 1fr; gap: 2.2rem 3rem; }
+.feats.three { grid-template-columns: repeat(3, 1fr); }
+.feat { border-left: 3px solid var(--teal); padding-left: 1.3rem; }
+.feat h3 { margin: 0 0 .5rem; }
+.awards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+.awards li { text-align: center; font-weight: 700; color: var(--navy); font-size: 1.25rem; }
+.awards li::before { content: "★"; display: grid; place-items: center; width: 4rem; height: 4rem; margin: 0 auto .7rem; border-radius: 50%; color: #fff; font-size: 1.7rem; background: linear-gradient(135deg, #b47c0c, var(--gold)); box-shadow: 0 8px 20px rgba(217,162,39,.35); }
 
 /* committee */
-.convener { display: grid; grid-template-columns: auto 1fr; gap: 1.6rem; align-items: center; padding: 2rem; border-radius: 20px; border: 1px solid rgba(232,169,44,.35); background: linear-gradient(120deg, var(--gold-soft), transparent 60%); margin-bottom: 3rem; }
-.convener .avatar { width: 84px; height: 84px; font-size: 2rem; }
-.convener h3 { font: 400 2rem/1.1 var(--serif); margin: .2rem 0 .4rem; }
-.role { padding: 1.3rem 0; border-top: 1px solid var(--line); }
-.role .mono { color: var(--gold); margin-bottom: .5rem; display: block; }
-.role p { font-weight: 500; }
-.role p small { display: block; font-weight: 400; color: var(--muted); font-size: .86rem; }
-.role p + p { margin-top: .6rem; }
-.sub { font: 400 1.9rem var(--serif); margin-bottom: 1.4rem; }
-.advisory { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.2rem; }
-.member { display: flex; gap: 1rem; padding: 1.3rem; border: 1px solid var(--line); border-radius: 16px; background: var(--ink-3); transition: border-color .25s; }
-.member:hover { border-color: rgba(11,127,166,.45); }
-.member .avatar { flex: none; width: 48px; height: 48px; font-size: 1.15rem; }
-.member h4 { font-weight: 600; font-size: 1rem; }
-.member p { color: var(--muted); font-size: .88rem; line-height: 1.45; }
-.member .tag { margin-top: .5rem; display: inline-block; font: .68rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--cyan); }
+.patrons { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.patrons li { text-align: center; background: #fff; border: 1px solid var(--rule); border-radius: 18px; padding: 2rem 1rem 1.6rem; box-shadow: 0 1px 2px rgba(11,34,87,.05), 0 10px 28px rgba(11,34,87,.08); }
+.patrons .av { width: 88px; height: 88px; font-size: 1.8rem; margin: 0 auto 1rem; box-shadow: 0 0 0 4px #fff, 0 0 0 6px var(--gold); }
+.patrons small { display: block; color: var(--teal); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; font-size: .9rem; }
+.patrons b { display: block; font-size: 1.4rem; color: var(--navy); margin: .3rem 0 .1rem; }
+.patrons li > span:last-child { color: var(--muted); }
+.roles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.roles li { display: flex; flex-direction: column; justify-content: center; text-align: center; background: #fff; border-radius: 14px; padding: 1.2rem .8rem; box-shadow: 0 6px 20px rgba(11,34,87,.07); }
+.roles small { display: block; color: var(--teal); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .9rem; line-height: 1.4; }
+.roles b { display: block; color: var(--navy); font-size: 1.2rem; margin-top: .4rem; }
+.people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 2.5rem; }
+.people li { padding: 1rem 0; border-top: 1px solid #d5dbe7; text-align: left; }
+.people b { display: block; color: var(--navy); font-size: 1.2rem; }
+.people span { color: var(--muted); font-size: 1.1rem; }
 
 /* dates */
-.dates { border: 1px solid var(--line); border-radius: 18px; overflow: hidden; align-self: start; background: var(--ink-3); }
-.dates div { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem 1rem; padding: 1.1rem 1.6rem; border-top: 1px solid var(--line); }
-.dates div:first-child { border-top: 0; background: var(--gold-soft); color: var(--gold); }
-.tba { font: .76rem var(--mono); letter-spacing: .06em; color: var(--muted); padding: .15rem .6rem; border: 1px dashed var(--line); border-radius: 6px; }
-.panel { padding: 1.8rem; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); }
-.panel + .panel { margin-top: 1.2rem; }
-.panel h3 { font: 400 1.6rem var(--serif); margin-bottom: .6rem; }
-.panel .tba { display: inline-block; margin-top: 1rem; }
-.panel.note { border-left: 4px solid var(--gold-fill); }
+.dates { display: grid; gap: .8rem; }
+.dates li { display: flex; align-items: center; flex-wrap: wrap; gap: .4rem 1rem; padding: 1.1rem 1.5rem; background: #fff; border-radius: 14px; border-left: 4px solid var(--teal); box-shadow: 0 1px 2px rgba(11,34,87,.05), 0 6px 18px rgba(11,34,87,.06); text-align: left; transition: transform .25s ease-out; }
+.dates li:hover { transform: translateX(4px); }
+.dates .ev { font-weight: 700; color: var(--navy); }
+.dates time { margin-left: auto; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dates .badge { font-size: .8rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .15rem .65rem; border-radius: 999px; }
+.dates .badge:empty { display: none; }
+.dates li.next { border-left-color: #d92d20; background: linear-gradient(90deg, #fff1ef, #fff 65%); }
+.dates li.next .badge { background: #fde4e1; color: #b42318; animation: ping 2s ease-out infinite; }
+.dates li.next time { color: #b42318; font-weight: 700; }
+@keyframes ping { 0% { box-shadow: 0 0 0 0 rgba(217,45,32,.35); } 70%, 100% { box-shadow: 0 0 0 8px rgba(217,45,32,0); } }
+.dates li.past { border-left-color: #c9cfdb; opacity: .65; }
+.dates li.past .badge { background: var(--tint); color: var(--muted); }
+.dates li.conf { border-left-color: var(--gold); background: linear-gradient(90deg, #fdf3dc, #fff 65%); }
+.dates li.conf time { color: var(--gold-text); font-weight: 700; }
 
-/* registration */
-.fees-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 18px; background: var(--ink-3); }
-.fees { width: 100%; border-collapse: collapse; font-size: 1.05rem; }
-.fees th, .fees td { padding: 1.1rem 1.6rem; text-align: left; border-top: 1px solid var(--line); }
-.fees thead th { border-top: 0; background: var(--text); color: #fff; font-weight: 700; }
-.fees tbody th { font-weight: 400; }
-.fees td { font-weight: 700; white-space: nowrap; }
-.fees tbody tr:last-child { background: var(--gold-soft); }
-@media (max-width: 600px) {
-  .fees { font-size: .92rem; }
-  .fees th, .fees td { padding: .8rem .6rem; }
-  .fees th:first-child { padding-left: 1rem; }
-}
-.guide { padding-left: 1.2rem; }
-.guide li { padding: .45rem 0; color: var(--muted); text-align: justify; hyphens: auto; }
-.guide li::marker { color: var(--gold-fill); }
+/* fee table */
+.fee { overflow-x: auto; border-radius: 18px; box-shadow: 0 8px 30px rgba(11,34,87,.1); background: #fff; }
+table { width: 100%; border-collapse: collapse; font-size: 1.18rem; }
+th, td { padding: 1rem 1.4rem; text-align: left; }
+thead th { background: var(--navy); color: #fff; }
+th + th, td + td { text-align: center; }
+tbody tr + tr td { border-top: 1px solid var(--rule); }
+tbody tr:hover td { background: var(--tint); }
+td.money { white-space: nowrap; font-weight: 700; color: var(--navy); }
+.note { margin-top: 2rem; padding: 1.2rem 1.5rem; border-radius: 14px; background: #fbf3dd; border-left: 4px solid var(--gold); }
 
 /* footer */
-footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
-.foot { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2.5rem; }
-.foot h3 { font: 400 1.8rem var(--serif); }
-.foot .support { margin-top: 1.5rem; border: 0; padding: 0; }
-.foot address { font-style: normal; color: var(--muted); }
-.legal { margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; color: var(--muted); font-size: .85rem; }
+footer { padding: 4.5rem 0 2rem; text-align: center; border-top: 1px solid var(--rule);
+  background: radial-gradient(rgba(11,34,87,.07) 1px, transparent 1.6px) 0 0 / 26px 26px, linear-gradient(180deg, #fff, #eef3fb); }
+footer p { text-align: center; }
+footer a.btn { margin-top: 1.5rem; }
+footer .small { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--rule); font-size: 1rem; color: var(--muted); }
 
-/* reveal: only hidden once JS has marked the page, so no-JS still shows content */
-.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-.js .reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .js .reveal { opacity: 1; transform: none; transition: none; }
-  .emblem::before, .emblem::after { animation: none; }
-}
+/* hover lift on surfaces */
+.roles li, .tl, .fee, .plate { transition-property: transform, box-shadow; transition-duration: .25s; transition-timing-function: ease-out; }
+.roles li:hover, .patrons li:hover, .plate:hover { transform: translateY(-4px); box-shadow: 0 14px 34px rgba(11,34,87,.13); }
+.tags li, .pills li { transition-property: background-color, color, border-color; transition-duration: .2s; }
+.tags li:hover { background: #fff; border-color: var(--teal); color: var(--teal); }
+.pills li:hover { background: var(--teal); }
+.speakers li .av { transition: transform .25s ease-out; }
+.speakers li:hover .av { transform: scale(1.08) rotate(-4deg); }
+h2, h3, .speakers b, .roles b { text-wrap: balance; }
+.stats b, td.money, .tl .time { font-variant-numeric: tabular-nums; }
 
-@media (max-width: 1080px) {
-  .nav ul { gap: 1.1rem; }
-}
-@media (max-width: 1020px) {
-  .hero-grid, .two, .days { grid-template-columns: 1fr; }
-  .emblem { width: min(80%, 360px); grid-row: 1; }
-  .themes { grid-template-columns: repeat(2, 1fr); }
-  .themes div:last-child { grid-column: span 2; }
-  .tracks, .speakers, .tiles { grid-template-columns: repeat(2, 1fr); }
-  .sec-head { grid-template-columns: 1fr; gap: .5rem; }
-  .foot { grid-template-columns: 1fr 1fr; }
-}
 @media (max-width: 900px) {
-  .menu-btn { display: block; }
-  .nav ul { display: none; position: absolute; top: 4.25rem; left: 0; right: 0; flex-direction: column; gap: 0; background: var(--ink); border-bottom: 1px solid var(--line); padding: .5rem 1rem 1rem; }
-  .nav ul.open { display: flex; }
-  .nav ul a { display: block; padding: .7rem 0; font-size: 1rem; }
-  .nav > .btn-gold { display: none; }
+  .roles { grid-template-columns: repeat(2, 1fr); }
+  .people, .feats.three { grid-template-columns: 1fr 1fr; }
 }
-@media (max-width: 600px) {
-  .themes, .tracks, .speakers, .tiles, .foot { grid-template-columns: 1fr; }
-  .themes div:last-child { grid-column: auto; }
-  .themes div { min-height: 0; }
-  .countdown div { min-width: 0; flex: 1; }
-  .slot { grid-template-columns: 1fr; gap: .2rem; padding-inline: 1.2rem; }
-  .convener { grid-template-columns: 1fr; padding: 1.5rem; }
-  .dates div { padding-inline: 1.1rem; }
-  .eyebrow span + span::before { display: none; }
+@media (max-width: 760px) {
+  body { font-size: 1.12rem; }
+  nav { position: static; }
+  nav .wrap { justify-content: center; padding: .6rem 0; }
+  nav ul { gap: .1rem 1.1rem; }
+  .hero { padding: 2.8rem 0 7rem; }
+  .plate { height: 92px; padding: .5rem 1rem; }
+  .plate.round { width: 92px; }
+  .plate .icaiaci { width: 80px; height: 80px; }
+  .plate .anrf { height: 62px; }
+  .stats { grid-template-columns: 1fr 1fr; gap: 1.2rem 0; }
+  .stats div:nth-child(3) { border-left: 0; }
+  .stats b { font-size: 2.1rem; }
+  section { padding: 3.5rem 0; }
+  .ticks, .numbered, .tracks, .speakers, .feats, .feats.three, .people, .awards, .patrons { grid-template-columns: 1fr; }
+  .tl { padding: .5rem 1.2rem; }
+  .tl > li { grid-template-columns: 1fr; gap: .2rem; }
+  th, td { padding: .75rem .8rem; }
+  table { font-size: 1.05rem; }
 }
 </style>
 </head>
 <body>
-<script>document.body.classList.add('js')</script>
-<a class="skip" href="#main">Skip to content</a>
 
-<header>
-  <nav class="wrap nav" aria-label="Primary">
-    <a class="brand" href="#top">
-      <img src="assets/icaiaci-logo.webp" alt="" width="40" height="40">
-      <span>ICAIACI–2027<small>28–29 JAN · MOODBIDRI</small></span>
-    </a>
-    <ul id="menu">
-      <li><a href="#about">About</a></li>
+<nav aria-label="Primary">
+  <div class="wrap">
+    <a class="brand" href="#top">ICAIACI<span>–</span>2027</a>
+    <ul>
       <li><a href="#papers">Call for Papers</a></li>
-      <li><a href="#keynotes">Keynotes</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#speakers">Speakers</a></li>
       <li><a href="#programme">Programme</a></li>
       <li><a href="#committee">Committee</a></li>
       <li><a href="#dates">Dates</a></li>
       <li><a href="#registration">Registration</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a class="btn btn-gold" href="#registration">Register</a>
-    <button class="menu-btn" aria-controls="menu" aria-expanded="false" aria-label="Menu">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </nav>
-</header>
+  </div>
+</nav>
 
-<main id="main">
-  <div class="hero" id="top">
-    <div class="wrap">
-      <div class="hero-grid">
-        <div>
-          <p class="eyebrow mono"><span>ICAIACI–2027</span><span>28–29 January 2027</span></p>
-          <h1>International Conference on Artificial Intelligence and <em>Advanced Computational</em> Intelligence</h1>
-          <p class="lede">Venue: Yenepoya Institute of Technology, Moodbidri, Karnataka, India</p>
-          <div class="hero-cta">
-            <a class="btn btn-gold" href="#papers">Call for Papers
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="btn" href="#programme">Technical Programme</a>
-          </div>
-          <div class="countdown" id="countdown" role="timer" aria-label="Time until the conference opens">
-            <div><b data-u="d">--</b><span class="mono">Days</span></div>
-            <div><b data-u="h">--</b><span class="mono">Hours</span></div>
-            <div><b data-u="m">--</b><span class="mono">Mins</span></div>
-            <div><b data-u="s">--</b><span class="mono">Secs</span></div>
-          </div>
-        </div>
-        <div class="emblem">
-          <img src="assets/icaiaci-logo.webp" alt="ICAIACI–2027 conference emblem" width="640" height="640">
-        </div>
-      </div>
-      <div class="support">
-        <span class="mono">Yenepoya Institute of Technology</span>
-        <span class="mono" aria-hidden="true">·</span>
-        <span class="anrf"><img src="assets/anrf-logo.webp" alt="Anusandhan National Research Foundation (ANRF)" width="800" height="357"></span>
-      </div>
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="logos">
+      <div class="plate round"><img class="icaiaci" src="assets/icaiaci-logo.webp" alt="ICAIACI–2027 emblem" width="640" height="640"></div>
+      <div class="plate"><img class="anrf" src="assets/anrf-logo.webp" alt="Anusandhan National Research Foundation (ANRF)" width="800" height="357"></div>
+    </div>
+    <p class="acr">ICAIACI–2027</p>
+    <h1>International Conference on Artificial Intelligence and Advanced Computational Intelligence</h1>
+    <p class="spons">Sponsored by Anusandhan National Research Foundation (ANRF)<span>ANRF File No. SSY/2026/001544</span></p>
+    <div class="chips">
+      <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>28–29 January 2027</span>
+      <span class="chip"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Yenepoya Institute of Technology, Moodbidri, Karnataka, India</span>
+    </div>
+    <div class="ctas">
+      <a class="btn" href="#papers">Call for Papers</a>
+      <a class="btn ghost" href="#registration">Registration</a>
     </div>
   </div>
+</header>
 
-  <section id="welcome" class="alt">
+<div class="wrap">
+  <div class="stats">
+    <div><b>2</b><span>Days</span></div>
+    <div><b>3</b><span>Technical Tracks</span></div>
+    <div><b>13</b><span>Confirmed Speakers</span></div>
+    <div><b>~500</b><span>Expected Submissions</span></div>
+  </div>
+</div>
+
+<main>
+  <section id="papers">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">Welcome</span>
-        <div>
-          <h2>Welcome to <em>ICAIACI–2027</em></h2>
-          <p>The International Conference on Artificial Intelligence and Advanced Computational Intelligence (ICAIACI–2027) aims to provide a premier international platform for researchers, academicians, industry professionals, innovators, and students to exchange cutting-edge research findings, emerging trends, and practical applications in Artificial Intelligence (AI) and Advanced Computational Intelligence.</p>
-          <p>The conference seeks to foster interdisciplinary collaboration, promote innovation-driven research, and facilitate academia–industry partnerships to address contemporary scientific, technological, and societal challenges.</p>
+      <p class="eyebrow">Submit your research</p>
+      <h2>Call for Papers</h2>
+      <div class="narrow">
+        <p>ICAIACI–2027 invites researchers, academicians, industry professionals, research scholars, and students to submit original and innovative research contributions related to Artificial Intelligence, Computational Intelligence, and emerging intelligent technologies.</p>
+        <p>Prospective authors are invited to submit papers addressing theoretical developments, experimental studies, innovative applications, emerging technologies, and interdisciplinary solutions relevant to the conference tracks.</p>
+      </div>
+
+      <h3 class="center">Conference Themes</h3>
+      <ul class="pills">
+        <li>Artificial Intelligence</li>
+        <li>IoT &amp; Cyber Security</li>
+        <li>Robotics &amp; Automation</li>
+        <li>Computational Intelligence</li>
+        <li>Data-Driven Innovation</li>
+      </ul>
+
+      <p class="center" style="margin-top:3rem">Topics for each track include, but are not limited to:</p>
+      <div class="tracks">
+        <div class="track" style="--c:var(--navy)">
+          <div class="num">01</div>
+          <h3>Track 1: Foundations and Applications of Artificial Intelligence</h3>
+          <ul class="tags">
+            <li>Machine Learning</li><li>Deep Learning</li><li>Natural Language Processing</li><li>Computer Vision</li><li>Pattern Recognition</li><li>Foundation Models</li><li>Large Language Model Applications</li><li>AI in Healthcare</li><li>AI in Education</li><li>Biomedical AI</li>
+          </ul>
+        </div>
+        <div class="track" style="--c:var(--teal)">
+          <div class="num">02</div>
+          <h3>Track 2: Advanced Computational Intelligence</h3>
+          <ul class="tags">
+            <li>Swarm Intelligence</li><li>Evolutionary Algorithms</li><li>Fuzzy Computing</li><li>Intelligent Optimization</li><li>Neural Networks</li><li>Signal Processing</li><li>High-Performance Computing</li><li>Computational Intelligence</li><li>Data Analytics</li>
+          </ul>
+        </div>
+        <div class="track" style="--c:var(--gold)">
+          <div class="num">03</div>
+          <h3>Track 3: Emerging Trends &amp; Applications</h3>
+          <ul class="tags">
+            <li>Generative AI</li><li>Agentic AI</li><li>Explainable AI</li><li>Responsible AI</li><li>AI for Internet of Things</li><li>Smart Cities</li><li>AI in Agriculture</li><li>Autonomous Systems</li><li>AI for Sustainable Development</li>
+          </ul>
         </div>
       </div>
-      <h3 class="mono reveal">Conference Highlights</h3>
-      <ul class="hl reveal">
-        <li>International Conference on AI and Advanced Computational Intelligence</li>
-        <li>Keynote lectures by eminent national and international experts</li>
-        <li>Technical paper presentation sessions</li>
-        <li>Parallel technical tracks</li>
-        <li>Poster presentations</li>
-        <li>Industry interaction</li>
-        <li>Women in AI Forum</li>
-        <li>Young Researchers Forum</li>
-        <li>Best Paper Awards</li>
-        <li>Best Student Paper Award</li>
-        <li>Best Poster Award</li>
-        <li>Networking and research collaboration opportunities</li>
+    </div>
+  </section>
+
+  <section id="about" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Welcome</p>
+      <h2>Welcome to ICAIACI–2027</h2>
+      <div class="narrow">
+        <p>The International Conference on Artificial Intelligence and Advanced Computational Intelligence (ICAIACI–2027) aims to provide a premier international platform for researchers, academicians, industry professionals, innovators, and students to exchange cutting-edge research findings, emerging trends, and practical applications in Artificial Intelligence (AI) and Advanced Computational Intelligence.</p>
+        <p>The conference seeks to foster interdisciplinary collaboration, promote innovation-driven research, and facilitate academia–industry partnerships to address contemporary scientific, technological, and societal challenges.</p>
+
+        <h3 class="center">Conference Highlights</h3>
+        <ul class="ticks">
+          <li>International Conference on AI and Advanced Computational Intelligence</li>
+          <li>Keynote lectures by eminent national and international experts</li>
+          <li>Technical paper presentation sessions</li>
+          <li>Parallel technical tracks</li>
+          <li>Poster presentations</li>
+          <li>Industry interaction</li>
+          <li>Women in AI Forum</li>
+          <li>Young Researchers Forum</li>
+          <li>Best Paper Awards</li>
+          <li>Best Student Paper Award</li>
+          <li>Best Poster Award</li>
+          <li>Networking and research collaboration opportunities</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <p class="eyebrow">Overview</p>
+      <h2>About the Conference</h2>
+      <div class="narrow">
+        <p>Artificial Intelligence and Computational Intelligence are transforming diverse sectors, including healthcare, agriculture, manufacturing, finance, education, cybersecurity, transportation, and smart cities.</p>
+        <p>Recent advances in Generative AI, Machine Learning, Explainable AI, Intelligent Automation, Edge Intelligence, Foundation Models, and Autonomous Systems have accelerated digital transformation across industries worldwide.</p>
+        <p>ICAIACI–2027 will bring together eminent international experts and researchers to deliberate on these advances and enable participants to gain insights into global research directions, emerging technologies, ethical AI practices, and sustainable AI solutions.</p>
+        <p>In the national context, the conference aligns with India's vision of becoming a global leader in AI-driven innovation through initiatives such as the IndiaAI Mission, Digital India, Atmanirbhar Bharat, and National Education Policy (NEP) 2020.</p>
+        <p>The conference provides a platform for researchers and students to present innovative solutions addressing national priorities in areas including smart healthcare, precision agriculture, intelligent transportation, disaster management, cybersecurity, language technologies, and inclusive digital governance.</p>
+
+        <h3 class="center">Objectives</h3>
+        <p class="center" style="margin-bottom:1.5rem">ICAIACI–2027 aims to:</p>
+        <ol class="numbered">
+          <li>Provide an international platform for presenting high-quality research in Artificial Intelligence and Computational Intelligence.</li>
+          <li>Promote interaction among researchers, academicians, industry professionals, innovators, and students.</li>
+          <li>Facilitate interdisciplinary and collaborative research.</li>
+          <li>Encourage innovation-driven solutions to real-world problems.</li>
+          <li>Strengthen academia–industry interaction.</li>
+          <li>Promote responsible, ethical, and sustainable Artificial Intelligence.</li>
+          <li>Provide young researchers and students exposure to emerging global research trends.</li>
+          <li>Create opportunities for future collaborative research, publications, internships, and academic partnerships.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="speakers" class="alt">
+    <div class="wrap">
+      <p class="eyebrow">Speakers</p>
+      <h2>Keynote Speakers &amp; Resource Persons</h2>
+      <p class="center">ICAIACI–2027 brings together eminent academicians, researchers, and industry professionals from India and abroad.</p>
+      <ul class="speakers">
+        <li class="key"><span class="av" aria-hidden="true">DD</span><div><b>Dr. Debabrata Das</b>Director, International Institute of Information Technology Bangalore<span class="exp">Expertise: AI, IoT, Wireless Networks, Smart Cities</span><span class="talk">Keynote Address 1: AI, IoT and Smart Cities</span></div></li>
+        <li class="key"><span class="av" aria-hidden="true">BR</span><div><b>Dr. Balaraman Ravindran</b>Professor, Department of Computer Science &amp; Engineering, IIT Madras, Chennai<span class="exp">Expertise: Reinforcement Learning, Deep Learning, AI</span><span class="talk">Keynote Address 2: Reinforcement Learning and Foundation Models</span></div></li>
+        <li class="key"><span class="av" aria-hidden="true">DŠ</span><div><b>Prof. Dejan Šeatović</b>Professor for Measurement Technology and Mechatronics, ISF – Institute for Intelligent Systems and Smart Farming, Rapperswil, Switzerland<span class="exp">Expertise: Artificial Intelligence (AI) for Intelligent Systems, Smart Farming &amp; Precision Agriculture</span><span class="talk">Keynote Address 3: Intelligent Systems, Smart Farming &amp; Robotics</span></div></li>
+        <li class="key"><span class="av" aria-hidden="true">TM</span><div><b>Dr. Thangavel Murugan</b>Assistant Professor, Department of Information Systems and Security, College of Information Technology, UAE University<span class="exp">Expertise: Information Security and Cybersecurity</span><span class="talk">Keynote Address 4: AI for Cybersecurity and Digital Forensics</span></div></li>
+        <li><span class="av" aria-hidden="true">KP</span><div><b>Dr. Keerthana Prasad</b>Professor &amp; Director, Manipal School of Information Sciences, Manipal Academy of Higher Education, Manipal<span class="exp">Expertise: Artificial Intelligence, Machine Learning, Data Analytics</span></div></li>
+        <li><span class="av" aria-hidden="true">RG</span><div><b>Dr. Ram Mohana Reddy Guddeti</b>Professor, Department of Information Technology, National Institute of Technology Karnataka, Surathkal<span class="exp">Expertise: Artificial Intelligence, Big Data Analytics, Cloud Computing, IoT</span></div></li>
+        <li><span class="av" aria-hidden="true">AJ</span><div><b>Mr. Arun Joseph</b>Software Developer, Google, United Kingdom<span class="exp">Expertise: AI-Powered Applications, Machine Learning</span></div></li>
+        <li><span class="av" aria-hidden="true">N</span><div><b>Dr. Nedunchelian</b>Dean – School of Computing, Rajalakshmi Institute of Technology, Chennai, Tamil Nadu<span class="exp">Expertise: Machine Learning Models</span></div></li>
+        <li><span class="av" aria-hidden="true">GS</span><div><b>Dr. G. Suganya</b>Professor &amp; Associate Dean, School of Computer Science and Engineering, VIT Chennai<span class="exp">Expertise: Generative AI, Agentic AI</span></div></li>
+        <li><span class="av" aria-hidden="true">PS</span><div><b>Dr. P. Shanthi</b>Assistant Professor, CEG, Anna University, Chennai<span class="exp">Expertise: Agentic AI, Machine Learning</span></div></li>
+        <li><span class="av" aria-hidden="true">F</span><div><b>Mr. Felix</b>CEO, Rafaniel Christen Technologies, Tamil Nadu<span class="exp">Expertise: Data Science, Full Stack App Development</span></div></li>
+        <li><span class="av" aria-hidden="true">KS</span><div><b>Mr. Kalyan Sivakumar</b>Senior Staff Engineer, Uber India Technology Private Ltd., Bangalore<span class="exp">Expertise: Data Science, Enterprise Warehouse Integration, Creation of Power BI</span></div></li>
+        <li><span class="av" aria-hidden="true">RR</span><div><b>Dr. Rajesh Raju</b>Professor &amp; Director, CIODS; CHIEM; OMICS Analytics Pvt Ltd; Professor (CSBMM), Yenepoya Deemed University<span class="exp">Expertise: Data Science, Quantum Computing</span></div></li>
       </ul>
     </div>
   </section>
 
-  <section id="about">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">01 / About</span>
-        <div><h2>About the <em>Conference</em></h2></div>
+  <section id="programme">
+    <div class="wrap narrow">
+      <p class="eyebrow">Schedule</p>
+      <h2>Technical Programme</h2>
+
+      <div class="day">
+        <h3 class="day-head"><span class="tag">Day 1</span><span>Thursday, 28 January 2027</span></h3>
+        <ol class="tl">
+          <li><span class="time">8:30 AM – 9:30 AM</span><span class="what"><b>Registration</b></span></li>
+          <li><span class="time">9:30 AM – 10:30 AM</span><span class="what"><b>Inaugural Ceremony</b></span></li>
+          <li class="brk"><span class="time">10:30 AM – 10:45 AM</span><span class="what">Tea Break</span></li>
+          <li><span class="time">10:45 AM – 11:45 AM</span><span class="what"><b>Keynote Address 1: AI, IoT and Smart Cities</b><span class="who">Prof. Debabrata Das, Director, IIIT Bangalore</span></span></li>
+          <li><span class="time">11:45 AM – 12:45 PM</span><span class="what"><b>Keynote Address 2: Reinforcement Learning and Foundation Models</b><span class="who">Prof. Balaraman Ravindran, IIT Madras</span></span></li>
+          <li class="brk"><span class="time">12:45 PM – 1:45 PM</span><span class="what">Lunch</span></li>
+          <li><span class="time">2:00 PM – 4:00 PM</span><span class="what"><b>Parallel Technical Sessions</b>
+            <ul>
+              <li>Technical Session A1 — Track 1: Foundations and Applications of AI</li>
+              <li>Technical Session B1 — Track 2: Advanced Computational Intelligence</li>
+              <li>Technical Session C1 — Track 3: Emerging Trends &amp; Applications</li>
+            </ul></span></li>
+        </ol>
       </div>
-      <div class="two">
-        <div class="prose reveal">
-          <p>Artificial Intelligence and Computational Intelligence are transforming diverse sectors, including healthcare, agriculture, manufacturing, finance, education, cybersecurity, transportation, and smart cities.</p>
-          <p>Recent advances in <strong>Generative AI, Machine Learning, Explainable AI, Intelligent Automation, Edge Intelligence, Foundation Models,</strong> and <strong>Autonomous Systems</strong> have accelerated digital transformation across industries worldwide.</p>
-          <p>ICAIACI–2027 will bring together eminent international experts and researchers to deliberate on these advances and enable participants to gain insights into global research directions, emerging technologies, ethical AI practices, and sustainable AI solutions.</p>
-          <p>In the national context, the conference aligns with India's vision of becoming a global leader in AI-driven innovation through initiatives such as the <strong>IndiaAI Mission, Digital India, Atmanirbhar Bharat,</strong> and <strong>National Education Policy (NEP) 2020</strong>.</p>
-          <p>The conference provides a platform for researchers and students to present innovative solutions addressing national priorities in areas including smart healthcare, precision agriculture, intelligent transportation, disaster management, cybersecurity, language technologies, and inclusive digital governance.</p>
-        </div>
-        <div class="reveal">
-          <h3 class="mono">Objectives</h3>
-          <p class="muted" style="margin-bottom:.4rem">ICAIACI–2027 aims to:</p>
-          <ol class="list">
-            <li>Provide an international platform for presenting high-quality research in Artificial Intelligence and Computational Intelligence.</li>
-            <li>Promote interaction among researchers, academicians, industry professionals, innovators, and students.</li>
-            <li>Facilitate interdisciplinary and collaborative research.</li>
-            <li>Encourage innovation-driven solutions to real-world problems.</li>
-            <li>Strengthen academia–industry interaction.</li>
-            <li>Promote responsible, ethical, and sustainable Artificial Intelligence.</li>
-            <li>Provide young researchers and students exposure to emerging global research trends.</li>
-            <li>Create opportunities for future collaborative research, publications, internships, and academic partnerships.</li>
-          </ol>
-        </div>
+
+      <div class="day">
+        <h3 class="day-head"><span class="tag">Day 2</span><span>Friday, 29 January 2027</span></h3>
+        <ol class="tl">
+          <li><span class="time">9:00 AM – 10:00 AM</span><span class="what"><b>Keynote Address 3: Intelligent Systems, Smart Farming &amp; Robotics</b><span class="who">Prof. Dejan Šeatović, Switzerland</span></span></li>
+          <li><span class="time">10:00 AM – 11:00 AM</span><span class="what"><b>Keynote Address 4: AI for Cybersecurity and Digital Forensics</b><span class="who">Dr. Thangavel Murugan, UAE University</span></span></li>
+          <li class="brk"><span class="time">11:00 AM – 11:15 AM</span><span class="what">Tea Break</span></li>
+          <li><span class="time">11:15 AM onwards</span><span class="what"><b>Parallel Technical Sessions</b>
+            <ul>
+              <li>Technical Session A2 — Track 1: Foundation Models, LLM Applications, AI in Education and Biomedical AI</li>
+              <li>Technical Session B2 — Track 2: Intelligent Optimization, High-Performance Computing, Computational Intelligence and Data Analytics</li>
+              <li>Technical Session C2 — Track 3: Responsible AI, Agentic AI, Generative AI and AI for Sustainable Development</li>
+            </ul></span></li>
+        </ol>
       </div>
     </div>
   </section>
 
-  <section id="papers" class="alt">
+  <section id="sessions" class="alt">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">02 / Call for Papers</span>
-        <div>
-          <h2>Call for <em>Papers</em></h2>
-          <p>ICAIACI–2027 invites researchers, academicians, industry professionals, research scholars, and students to submit original and innovative research contributions related to Artificial Intelligence, Computational Intelligence, and emerging intelligent technologies.</p>
-          <p>Prospective authors are invited to submit papers addressing theoretical developments, experimental studies, innovative applications, emerging technologies, and interdisciplinary solutions relevant to the conference tracks.</p>
+      <p class="eyebrow">Beyond the papers</p>
+      <h2>Special Sessions</h2>
+      <div class="feats narrow">
+        <div class="feat">
+          <h3>Poster Session</h3>
+          <p>A dedicated poster session will provide participants with an opportunity to showcase innovative research ideas, preliminary findings, prototypes, and emerging research.</p>
+        </div>
+        <div class="feat">
+          <h3>Industry Showcase</h3>
+          <p>The Industry Showcase aims to strengthen interaction between academia and industry and expose participants to practical applications and emerging technological developments.</p>
+        </div>
+        <div class="feat">
+          <h3>Women in AI Forum</h3>
+          <p>A dedicated forum highlighting participation, research, leadership, innovation, and opportunities for women in Artificial Intelligence and emerging technologies.</p>
+        </div>
+        <div class="feat">
+          <h3>Young Researchers Forum</h3>
+          <p>A platform designed to encourage young researchers and students to interact with experts, present research ideas, explore collaborations, and understand emerging research opportunities.</p>
         </div>
       </div>
-      <h3 class="mono reveal">Conference Themes · The broad areas of ICAIACI–2027 include:</h3>
-      <div class="themes reveal">
-        <div><span class="mono">01</span><h3>Artificial Intelligence</h3></div>
-        <div><span class="mono">02</span><h3>IoT &amp; Cyber Security</h3></div>
-        <div><span class="mono">03</span><h3>Robotics &amp; Automation</h3></div>
-        <div><span class="mono">04</span><h3>Computational Intelligence</h3></div>
-        <div><span class="mono">05</span><h3>Data-Driven Innovation</h3></div>
-      </div>
-      <div class="tracks">
-        <article class="track reveal">
-          <span class="mono">Track 1</span>
-          <h3>Foundations and Applications of Artificial Intelligence</h3>
-          <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Topics include, but are not limited to:</p>
-          <div class="chips">
-            <span class="chip">Machine Learning</span><span class="chip">Deep Learning</span><span class="chip">Natural Language Processing</span><span class="chip">Computer Vision</span><span class="chip">Pattern Recognition</span><span class="chip">Foundation Models</span><span class="chip">Large Language Model Applications</span><span class="chip">AI in Healthcare</span><span class="chip">AI in Education</span><span class="chip">Biomedical AI</span>
-          </div>
-        </article>
-        <article class="track reveal">
-          <span class="mono">Track 2</span>
-          <h3>Advanced Computational Intelligence</h3>
-          <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Topics include, but are not limited to:</p>
-          <div class="chips">
-            <span class="chip">Swarm Intelligence</span><span class="chip">Evolutionary Algorithms</span><span class="chip">Fuzzy Computing</span><span class="chip">Intelligent Optimization</span><span class="chip">Neural Networks</span><span class="chip">Signal Processing</span><span class="chip">High-Performance Computing</span><span class="chip">Computational Intelligence</span><span class="chip">Data Analytics</span>
-          </div>
-        </article>
-        <article class="track reveal">
-          <span class="mono">Track 3</span>
-          <h3>Emerging Trends &amp; Applications</h3>
-          <p class="muted" style="font-size:.88rem;margin-bottom:.7rem">Topics include, but are not limited to:</p>
-          <div class="chips">
-            <span class="chip">Generative AI</span><span class="chip">Agentic AI</span><span class="chip">Explainable AI</span><span class="chip">Responsible AI</span><span class="chip">AI for Internet of Things</span><span class="chip">Smart Cities</span><span class="chip">AI in Agriculture</span><span class="chip">Autonomous Systems</span><span class="chip">AI for Sustainable Development</span>
-          </div>
-        </article>
-      </div>
+
+      <h3 class="center">Awards</h3>
+      <p class="center" style="margin-bottom:1.5rem">Outstanding contributions presented during ICAIACI–2027 will be recognized through:</p>
+      <ul class="awards narrow">
+        <li>Best Paper Award</li>
+        <li>Best Student Paper Award</li>
+        <li>Best Poster Award</li>
+      </ul>
     </div>
   </section>
 
-  <section id="keynotes">
+  <section id="committee">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">03 / Keynotes</span>
-        <div>
-          <h2>Keynote Speakers &amp; <em>Resource Persons</em></h2>
-          <p>ICAIACI–2027 brings together eminent academicians, researchers, and industry professionals from India and abroad.</p>
-        </div>
-      </div>
-      <div class="speakers">
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">DŠ</div>
-          <div><h3>Prof. Dejan Šeatović</h3><p class="org">Professor for Measurement Technology and Mechatronics<br>ISF – Institute for Intelligent Systems and Smart Farming, Rapperswil, Switzerland</p></div>
-          <p class="exp"><b>Expertise:</b> Artificial Intelligence (AI) for Intelligent Systems, Smart Farming &amp; Precision Agriculture</p>
-          <p class="talk"><span>Keynote Address 3 · Day 2</span>Intelligent Systems, Smart Farming &amp; Robotics</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">BR</div>
-          <div><h3>Dr. Balaraman Ravindran</h3><p class="org">Professor<br>Department of Computer Science &amp; Engineering, IIT Madras, Chennai</p></div>
-          <p class="exp"><b>Expertise:</b> Reinforcement Learning, Deep Learning, AI</p>
-          <p class="talk"><span>Keynote Address 2 · Day 1</span>Reinforcement Learning and Foundation Models</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">DD</div>
-          <div><h3>Dr. Debabrata Das</h3><p class="org">Director<br>International Institute of Information Technology Bangalore</p></div>
-          <p class="exp"><b>Expertise:</b> AI, IoT, Wireless Networks, Smart Cities</p>
-          <p class="talk"><span>Keynote Address 1 · Day 1</span>AI, IoT and Smart Cities</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">TM</div>
-          <div><h3>Dr. Thangavel Murugan</h3><p class="org">Assistant Professor<br>Department of Information Systems and Security, College of Information Technology, UAE University</p></div>
-          <p class="exp"><b>Expertise:</b> Information Security and Cybersecurity</p>
-          <p class="talk"><span>Keynote Address 4 · Day 2</span>AI for Cybersecurity and Digital Forensics</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">KP</div>
-          <div><h3>Dr. Keerthana Prasad</h3><p class="org">Professor &amp; Director<br>Manipal School of Information Sciences, Manipal Academy of Higher Education, Manipal</p></div>
-          <p class="exp"><b>Expertise:</b> Artificial Intelligence, Machine Learning, Data Analytics</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">RG</div>
-          <div><h3>Dr. Ram Mohana Reddy Guddeti</h3><p class="org">Professor<br>Department of Information Technology, National Institute of Technology Karnataka, Surathkal</p></div>
-          <p class="exp"><b>Expertise:</b> Artificial Intelligence, Big Data Analytics, Cloud Computing, IoT</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">AJ</div>
-          <div><h3>Mr. Arun Joseph</h3><p class="org">Software Developer<br>Google, United Kingdom</p></div>
-          <p class="exp"><b>Expertise:</b> AI-Powered Applications, Machine Learning</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">NE</div>
-          <div><h3>Dr. Nedunchelian</h3><p class="org">Dean – School of Computing<br>Rajalakshmi Institute of Technology, Chennai, Tamil Nadu</p></div>
-          <p class="exp"><b>Expertise:</b> Machine Learning Models</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">GS</div>
-          <div><h3>Dr. G. Suganya</h3><p class="org">Professor &amp; Associate Dean<br>School of Computer Science and Engineering, VIT Chennai</p></div>
-          <p class="exp"><b>Expertise:</b> Generative AI, Agentic AI</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">PS</div>
-          <div><h3>Dr. P. Shanthi</h3><p class="org">Assistant Professor<br>CEG, Anna University, Chennai</p></div>
-          <p class="exp"><b>Expertise:</b> Agentic AI, Machine Learning</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">FE</div>
-          <div><h3>Mr. Felix</h3><p class="org">CEO<br>Rafaniel Christen Technologies, Tamil Nadu</p></div>
-          <p class="exp"><b>Expertise:</b> Data Science, Full Stack App Development</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">KS</div>
-          <div><h3>Mr. Kalyan Sivakumar</h3><p class="org">Senior Staff Engineer<br>Uber India Technology Private Ltd., Bangalore</p></div>
-          <p class="exp"><b>Expertise:</b> Data Science, Enterprise Warehouse Integration, Creation of Power BI</p>
-        </article>
-        <article class="speaker reveal">
-          <div class="avatar" aria-hidden="true">RR</div>
-          <div><h3>Dr. Rajesh Raju</h3><p class="org">Professor &amp; Director<br>CIODS; CHIEM; OMICS Analytics Pvt Ltd; Professor (CSBMM), Yenepoya Deemed University</p></div>
-          <p class="exp"><b>Expertise:</b> Data Science, Quantum Computing</p>
-        </article>
-      </div>
+      <p class="eyebrow">People</p>
+      <h2>Committee</h2>
+      <ul class="patrons">
+        <li><span class="av" aria-hidden="true">AK</span><small>Chief Patron</small><b>Dr. Abdul Kareem</b><span>Principal</span></li>
+        <li><span class="av" aria-hidden="true">MD</span><small>Patron</small><b>Dr. Mewin D’Souza</b><span>Dean – Academics</span></li>
+        <li><span class="av" aria-hidden="true">MS</span><small>Chair &amp; Conference Convenor</small><b>Dr. M. Sujaritha</b><span>Dean – R&amp;D</span></li>
+      </ul>
+
+      <h3 class="center">Organizing Committee</h3>
+      <ul class="roles">
+        <li><small>Publication Chair</small><b>Dr. Melwin D’Souza</b></li>
+        <li><small>Technical Program Committee (TPC) Chair</small><b>Dr. Rashel Sarkar</b></li>
+        <li><small>Treasurer</small><b>Dr. J. Prakash</b></li>
+        <li><small>Information &amp; Contact Chair</small><b>Dr. Shahabaz S. M.</b></li>
+        <li><small>Organizing Secretary</small><b>Dr. Harun Bengali</b></li>
+        <li><small>Technical Program Co-Chair</small><b>Dr. Rameesa K.</b></li>
+        <li><small>Publicity &amp; Media Chair</small><b>Dr. Shashank M Gowda</b></li>
+        <li><small>Registration Chair</small><b>Mrs. Deeksha K. R.</b></li>
+        <li><small>Sponsorship &amp; Industry Relations Chair</small><b>Dr. Prasanna Kumar</b></li>
+        <li><small>Venue &amp; Logistics Chair</small><b>Dr. Manish Prajapati</b></li>
+        <li><small>Website &amp; Digital Communications Chair</small><b>Mr. Hemanth N G</b></li>
+        <li><small>Hospitality Chair</small><b>Mr. Manjunath Raikar</b></li>
+      </ul>
+
+      <h3 class="center">Advisory Committee</h3>
+      <ul class="people">
+        <li><b>Dr. Manjunath Kamath K</b><span>Associate Professor and Head, NMAM Institute of Technology, Nitte</span></li>
+        <li><b>Sahana Bhat</b><span>Project Manager, Data and AI, NTT Data</span></li>
+        <li><b>Vineetha Pais</b><span>Associate Professor, AJIET</span></li>
+        <li><b>Dr. Padmanayana</b><span>Professor &amp; Head, A J Institute of Engineering and Technology</span></li>
+        <li><b>Jinto Thomas</b><span>Software Developer, Riskonnect Services Private Limited</span></li>
+        <li><b>Dr. Bhagya Jyothi K L</b><span>Professor, KVG College of Engineering</span></li>
+        <li><b>Merlyn Melita Mathias</b><span>Cloud Specialist, Niveus Solutions – Part of NTT Data</span></li>
+        <li><b>Stewan Fernandes</b><span>Creighton University, USA</span></li>
+        <li><b>Dr. Mohammad Fazle Azam</b><span>Aligarh Muslim University, India</span></li>
+        <li><b>Dr. Basavaraj Talawar</b><span>NITK Surathkal</span></li>
+        <li><b>Dr. Karthik K.</b><span>Professor, VIT Vellore</span></li>
+        <li><b>Dr. Jimson Mathew</b><span>IIT Patna</span></li>
+        <li><b>Dr. Sreesha S.</b><span>Professor, Manipal University</span></li>
+        <li><b>Dr. Sishaj P. Simon</b><span>NIT Trichy</span></li>
+        <li><b>Dr. Mohammed Javed</b><span>IIIT Allahabad</span></li>
+      </ul>
     </div>
   </section>
 
-  <section id="programme" class="alt">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">04 / Programme</span>
-        <div><h2>Technical <em>Programme</em></h2></div>
-      </div>
-      <div class="days">
-        <div class="day reveal">
-          <div class="day-head"><h3>Day 1</h3><span>Thursday, 28 January 2027</span></div>
-          <div class="slot"><time>8:30 AM – 9:30 AM</time><span>Registration</span></div>
-          <div class="slot"><time>9:30 AM – 10:30 AM</time><span>Inaugural Ceremony</span></div>
-          <div class="slot brk"><time>10:30 AM – 10:45 AM</time><span>Tea Break</span></div>
-          <div class="slot key"><time>10:45 AM – 11:45 AM</time><span><b>Keynote Address 1</b><strong>AI, IoT and Smart Cities</strong><small>Prof. Debabrata Das, Director, IIIT Bangalore</small></span></div>
-          <div class="slot key"><time>11:45 AM – 12:45 PM</time><span><b>Keynote Address 2</b><strong>Reinforcement Learning and Foundation Models</strong><small>Prof. Balaraman Ravindran, IIT Madras</small></span></div>
-          <div class="slot brk"><time>12:45 PM – 1:45 PM</time><span>Lunch</span></div>
-          <div class="slot"><time>2:00 PM – 4:00 PM</time><span>Parallel Technical Sessions
-            <span class="parallel">
-              <span><b>Technical Session A1</b><em>Track 1: Foundations and Applications of AI</em></span>
-              <span><b>Technical Session B1</b><em>Track 2: Advanced Computational Intelligence</em></span>
-              <span><b>Technical Session C1</b><em>Track 3: Emerging Trends &amp; Applications</em></span>
-            </span></span></div>
-        </div>
-        <div class="day reveal">
-          <div class="day-head"><h3>Day 2</h3><span>Friday, 29 January 2027</span></div>
-          <div class="slot key"><time>9:00 AM – 10:00 AM</time><span><b>Keynote Address 3</b><strong>Intelligent Systems, Smart Farming &amp; Robotics</strong><small>Prof. Dejan Šeatović, Switzerland</small></span></div>
-          <div class="slot key"><time>10:00 AM – 11:00 AM</time><span><b>Keynote Address 4</b><strong>AI for Cybersecurity and Digital Forensics</strong><small>Dr. Thangavel Murugan, UAE University</small></span></div>
-          <div class="slot brk"><time>11:00 AM – 11:15 AM</time><span>Tea Break</span></div>
-          <div class="slot"><time>11:15 AM onwards</time><span>Parallel Technical Sessions
-            <span class="parallel">
-              <span><b>Technical Session A2 — Track 1</b><em>Foundation Models, LLM Applications, AI in Education and Biomedical AI.</em></span>
-              <span><b>Technical Session B2 — Track 2</b><em>Intelligent Optimization, High-Performance Computing, Computational Intelligence and Data Analytics.</em></span>
-              <span><b>Technical Session C2 — Track 3</b><em>Responsible AI, Agentic AI, Generative AI and AI for Sustainable Development.</em></span>
-            </span></span></div>
-        </div>
-      </div>
+  <section id="dates" class="alt">
+    <div class="wrap narrow">
+      <p class="eyebrow">Mark your calendar</p>
+      <h2>Important Dates</h2>
+      <ol class="dates">
+        <li data-due="2026-11-20"><span class="ev">Abstract Submission</span><span class="badge"></span><time datetime="2026-11-20">Friday, 20 November 2026</time></li>
+        <li data-due="2026-12-15"><span class="ev">Full-Length Paper Submission</span><span class="badge"></span><time datetime="2026-12-15">Tuesday, 15 December 2026</time></li>
+        <li data-due="2027-01-05"><span class="ev">Notification of Acceptance</span><span class="badge"></span><time datetime="2027-01-05">Tuesday, 5 January 2027</time></li>
+        <li data-due="2027-01-19"><span class="ev">Registration Deadline</span><span class="badge"></span><time datetime="2027-01-19">Tuesday, 19 January 2027</time></li>
+        <li data-due="2027-01-19"><span class="ev">Camera-Ready Paper Submission</span><span class="badge"></span><time datetime="2027-01-19">Tuesday, 19 January 2027</time></li>
+        <li class="conf"><span class="ev">Conference Dates</span><time datetime="2027-01-28">Thursday &amp; Friday, 28–29 January 2027</time></li>
+      </ol>
+
+      <h3>Paper Submission</h3>
+      <p>Authors are invited to submit original research contributions relevant to the conference themes and tracks. Detailed information regarding paper format, page limit, submission portal, review procedure, camera-ready submission and publication requirements will be announced separately.</p>
+      <p><b>Paper Submission Portal:</b> To be announced</p>
+
+      <h3>Expected Participation</h3>
+      <p>ICAIACI–2027 aims to attract researchers, academicians, scientists, industry professionals, research scholars, and students from India and abroad. The conference anticipates approximately 500 research paper submissions, with around 100 papers expected to be selected for presentation.</p>
     </div>
   </section>
 
-  <section id="sessions">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">05 / Special Sessions</span>
-        <div><h2>Special <em>Sessions</em></h2></div>
-      </div>
-      <div class="tiles">
-        <div class="tile reveal"><h3>Poster Session</h3><p>A dedicated poster session will provide participants with an opportunity to showcase innovative research ideas, preliminary findings, prototypes, and emerging research.</p></div>
-        <div class="tile reveal"><h3>Industry Showcase</h3><p>The Industry Showcase aims to strengthen interaction between academia and industry and expose participants to practical applications and emerging technological developments.</p></div>
-        <div class="tile reveal"><h3>Women in AI Forum</h3><p>A dedicated forum highlighting participation, research, leadership, innovation, and opportunities for women in Artificial Intelligence and emerging technologies.</p></div>
-        <div class="tile reveal"><h3>Young Researchers Forum</h3><p>A platform designed to encourage young researchers and students to interact with experts, present research ideas, explore collaborations, and understand emerging research opportunities.</p></div>
-      </div>
-      <h3 class="sub reveal" style="margin-top:3.5rem">Awards</h3>
-      <p class="muted reveal">Outstanding contributions presented during ICAIACI–2027 will be recognized through:</p>
-      <div class="awards reveal" style="margin-top:1.2rem">
-        <span class="award"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Best Paper Award</span>
-        <span class="award"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Best Student Paper Award</span>
-        <span class="award"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="M8.5 14 7 22l5-3 5 3-1.5-8"/></svg>Best Poster Award</span>
-      </div>
-    </div>
-  </section>
-
-  <section id="committee" class="alt">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">06 / Committee</span>
-        <div><h2>Conference <em>Committee</em></h2></div>
-      </div>
-
-      <div class="convener reveal">
-        <div class="avatar" aria-hidden="true">MS</div>
-        <div>
-          <span class="mono gold">Conference Convener</span>
-          <h3>Dr. M. Sujaritha</h3>
-          <p class="muted">Professor and Dean (Research &amp; Development)<br>Department of Computer Science and Engineering<br>Yenepoya Institute of Technology, Moodbidri, Karnataka – 574225, India</p>
-        </div>
-      </div>
-
-      <h3 class="sub reveal">Advisory Committee</h3>
-      <div class="advisory">
-        <article class="member reveal"><div class="avatar" aria-hidden="true">MK</div><div><h4>Dr. Manjunath Kamath K</h4><p>Associate Professor and Head</p><span class="tag">NMAM Institute of Technology, Nitte</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">SB</div><div><h4>Sahana Bhat</h4><p>Project Manager, Data and AI</p><span class="tag">NTT Data</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">VP</div><div><h4>Vineetha Pais</h4><p>Associate Professor</p><span class="tag">AJIET</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">PN</div><div><h4>Dr. Padmanayana</h4><p>Professor &amp; Head</p><span class="tag">A J Institute of Engineering and Technology</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">JT</div><div><h4>Jinto Thomas</h4><p>Software Developer</p><span class="tag">Riskonnect Services Private Limited</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">BJ</div><div><h4>Dr. Bhagya Jyothi K L</h4><p>Professor</p><span class="tag">KVG College of Engineering</span></div></article>
-        <article class="member reveal"><div class="avatar" aria-hidden="true">MM</div><div><h4>Merlyn Melita Mathias</h4><p>Cloud Specialist</p><span class="tag">Niveus Solutions – Part of NTT Data</span></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section id="dates">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">07 / Important Dates</span>
-        <div><h2>Important <em>Dates</em></h2></div>
-      </div>
-      <div class="two">
-        <div class="dates reveal">
-          <div><b>Conference Dates</b><b>28–29 January 2027</b></div>
-          <div><span>Paper Submission</span><span class="tba">To be announced</span></div>
-          <div><span>Notification of Acceptance</span><span class="tba">To be announced</span></div>
-          <div><span>Camera-Ready Paper Submission</span><span class="tba">To be announced</span></div>
-          <div><span>Author Registration</span><span class="tba">To be announced</span></div>
-          <div><span>Early-Bird Registration</span><span class="tba">To be announced</span></div>
-        </div>
-        <div class="reveal">
-          <div class="panel">
-            <h3>Paper Submission</h3>
-            <p class="muted">Authors are invited to submit original research contributions relevant to the conference themes and tracks. Detailed information regarding paper format, page limit, submission portal, review procedure, camera-ready submission and publication requirements will be announced separately.</p>
-            <span class="tba">Paper Submission Portal: To be announced</span>
-          </div>
-          <div class="panel">
-            <h3>Expected Participation</h3>
-            <p class="muted">ICAIACI–2027 aims to attract researchers, academicians, scientists, industry professionals, research scholars, and students from India and abroad.</p>
-            <p class="muted" style="margin-top:.6rem">The conference anticipates approximately <strong style="color:var(--text)">500 research paper submissions</strong>, with around <strong style="color:var(--text)">100 papers</strong> expected to be selected for presentation.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="registration" class="alt">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">08 / Registration</span>
-        <div><h2>Registration <em>Fee</em></h2></div>
-      </div>
-      <div class="fees-wrap reveal">
-        <table class="fees">
+  <section id="registration">
+    <div class="wrap narrow">
+      <p class="eyebrow">Join us</p>
+      <h2>Registration Fee</h2>
+      <div class="fee">
+        <table>
           <thead><tr><th scope="col">Category</th><th scope="col">Indian Participants</th><th scope="col">International Participants</th></tr></thead>
           <tbody>
-            <tr><th scope="row">UG / PG Students</th><td>₹2,000</td><td>USD 75</td></tr>
-            <tr><th scope="row">Research Scholars</th><td>₹3,000</td><td>USD 100</td></tr>
-            <tr><th scope="row">Faculty / Academicians</th><td>₹4,000</td><td>USD 150</td></tr>
-            <tr><th scope="row">Industry Professionals</th><td>₹5,000</td><td>USD 200</td></tr>
-            <tr><th scope="row">Attendee Only (No Paper Presentation)</th><td>₹1,000</td><td>USD 50</td></tr>
+            <tr><td>UG / PG Students</td><td class="money">₹2,000</td><td class="money">USD 75</td></tr>
+            <tr><td>Research Scholars</td><td class="money">₹3,000</td><td class="money">USD 100</td></tr>
+            <tr><td>Faculty / Academicians</td><td class="money">₹4,000</td><td class="money">USD 150</td></tr>
+            <tr><td>Industry Professionals</td><td class="money">₹5,000</td><td class="money">USD 200</td></tr>
+            <tr><td>Attendee Only (No Paper Presentation)</td><td class="money">₹1,000</td><td class="money">USD 50</td></tr>
           </tbody>
         </table>
       </div>
-      <div class="two" style="margin-top:3rem">
-        <div class="reveal">
-          <h3 class="mono">Registration Guidelines</h3>
-          <ul class="guide">
-            <li>At least one author of each accepted paper must complete registration and present the paper at the conference.</li>
-            <li>Each registration covers one paper, subject to the conference registration policy.</li>
-            <li>Additional paper registration, if permitted, will be charged separately.</li>
-            <li>Registration includes participation in the technical sessions and a conference certificate. Meals and conference materials will be provided as specified by the organizers.</li>
-            <li>Selected papers will be considered for publication through the applicable publication route, subject to peer-review outcomes, publisher approval, quality requirements, and the relevant publication terms.</li>
-            <li>IEEE Xplore® publication and Springer proceedings publication are not guaranteed unless formally approved and confirmed by the respective publisher.</li>
-            <li>Registration fees are non-refundable, subject to the conference's published cancellation policy.</li>
-          </ul>
-        </div>
-        <div class="reveal">
-          <div class="panel note">
-            <h3>Publication Note</h3>
-            <p class="muted">The conference is exploring publication opportunities with IEEE and Springer Nature. Further details will be announced on the official conference website after formal confirmation.</p>
-          </div>
-        </div>
-      </div>
+
+      <h3>Registration Guidelines</h3>
+      <ul class="ticks one">
+        <li>At least one author of each accepted paper must complete registration and present the paper at the conference.</li>
+        <li>Each registration covers one paper, subject to the conference registration policy.</li>
+        <li>Additional paper registration, if permitted, will be charged separately.</li>
+        <li>Registration includes participation in the technical sessions and a conference certificate. Meals and conference materials will be provided as specified by the organizers.</li>
+        <li>Selected papers will be considered for publication through the applicable publication route, subject to peer-review outcomes, publisher approval, quality requirements, and the relevant publication terms.</li>
+        <li>IEEE Xplore® publication and Springer proceedings publication are not guaranteed unless formally approved and confirmed by the respective publisher.</li>
+        <li>Registration fees are non-refundable, subject to the conference's published cancellation policy.</li>
+      </ul>
+      <p class="note"><b>Publication Note:</b> The conference is exploring publication opportunities with IEEE and Springer Nature. Further details will be announced on the official conference website after formal confirmation.</p>
     </div>
   </section>
 
-  <section id="host">
+  <section id="host" class="alt">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="mono">09 / The Host</span>
-        <div>
-          <h2>About Yenepoya Institute <em>of Technology</em></h2>
-          <p>Yenepoya Institute of Technology (YIT) is located at Thodar, Moodbidri, Mangaluru, Karnataka.</p>
-          <p>The institution promotes technical education, research, innovation, entrepreneurship, student development, and industry–academia interaction. Through technical events, hackathons, coding competitions, research activities, and innovation initiatives, the institution provides opportunities for students and faculty members to engage with emerging technologies and real-world challenges.</p>
+      <p class="eyebrow">The host</p>
+      <h2>About Yenepoya Institute of Technology</h2>
+      <div class="narrow">
+        <p>Yenepoya Institute of Technology (YIT) is located at Thodar, Moodbidri, Mangaluru, Karnataka.</p>
+        <p>The institution promotes technical education, research, innovation, entrepreneurship, student development, and industry–academia interaction. Through technical events, hackathons, coding competitions, research activities, and innovation initiatives, the institution provides opportunities for students and faculty members to engage with emerging technologies and real-world challenges.</p>
+      </div>
+
+      <h3 class="center">Previous Technical Activities</h3>
+      <div class="feats three">
+        <div class="feat">
+          <h3>Matrix Fusion – AI &amp; Coding Hackathon</h3>
+          <p>An AI and coding hackathon organized to bring students together to solve real-world problems using Artificial Intelligence and programming skills. Participants worked in teams to develop innovative solutions while enhancing coding, problem-solving, and teamwork abilities.</p>
+        </div>
+        <div class="feat">
+          <h3>Bytecode 3.0 – Interdepartmental Coding Competition</h3>
+          <p>A two-day coding competition involving students from different departments. The event promoted algorithmic thinking, competitive coding, collaboration, and technical excellence.</p>
+        </div>
+        <div class="feat">
+          <h3>Yentechmania – Annual Technical Fest</h3>
+          <p>YIT's technical festival featuring hackathons, coding contests, technical talks, and IoT/Embedded ideation activities. The event encourages creativity, innovation, prototype development, and practical problem-solving.</p>
         </div>
       </div>
-      <div class="two">
-        <div class="reveal">
-          <h3 class="mono">Previous Technical Activities</h3>
-          <div class="role"><p>Matrix Fusion – AI &amp; Coding Hackathon<small>An AI and coding hackathon organized to bring students together to solve real-world problems using Artificial Intelligence and programming skills. Participants worked in teams to develop innovative solutions while enhancing coding, problem-solving, and teamwork abilities.</small></p></div>
-          <div class="role"><p>Bytecode 3.0 – Interdepartmental Coding Competition<small>A two-day coding competition involving students from different departments. The event promoted algorithmic thinking, competitive coding, collaboration, and technical excellence.</small></p></div>
-          <div class="role"><p>Yentechmania – Annual Technical Fest<small>YIT's technical festival featuring hackathons, coding contests, technical talks, and IoT/Embedded ideation activities. The event encourages creativity, innovation, prototype development, and practical problem-solving.</small></p></div>
-        </div>
-        <div class="reveal">
-          <h3 class="mono">Why Attend ICAIACI–2027?</h3>
-          <p class="muted" style="margin-bottom:.4rem">ICAIACI–2027 provides participants with opportunities to:</p>
-          <ol class="list">
-            <li>Present and discuss innovative research.</li>
-            <li>Learn from national and international experts.</li>
-            <li>Explore emerging developments in AI and Computational Intelligence.</li>
-            <li>Interact with researchers from academia and industry.</li>
-            <li>Develop interdisciplinary research collaborations.</li>
-            <li>Explore emerging research areas such as Generative AI, Agentic AI, Foundation Models and Responsible AI.</li>
-            <li>Participate in technical sessions and research forums.</li>
-            <li>Build professional and academic networks.</li>
-            <li>Gain exposure to innovative solutions addressing societal and industrial challenges.</li>
-          </ol>
-        </div>
+
+      <div class="narrow">
+        <h3 class="center">Why Attend ICAIACI–2027?</h3>
+        <p class="center" style="margin-bottom:1.5rem">ICAIACI–2027 provides participants with opportunities to:</p>
+        <ul class="ticks">
+          <li>Present and discuss innovative research.</li>
+          <li>Learn from national and international experts.</li>
+          <li>Explore emerging developments in AI and Computational Intelligence.</li>
+          <li>Interact with researchers from academia and industry.</li>
+          <li>Develop interdisciplinary research collaborations.</li>
+          <li>Explore emerging research areas such as Generative AI, Agentic AI, Foundation Models and Responsible AI.</li>
+          <li>Participate in technical sessions and research forums.</li>
+          <li>Build professional and academic networks.</li>
+          <li>Gain exposure to innovative solutions addressing societal and industrial challenges.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -707,59 +639,30 @@ footer { border-top: 1px solid var(--line); padding: 3.5rem 0 2rem; }
 
 <footer id="contact">
   <div class="wrap">
-    <div class="foot">
-      <div>
-        <h3>ICAIACI–2027</h3>
-        <p class="muted">International Conference on Artificial Intelligence and Advanced Computational Intelligence</p>
-        <div class="support">
-          <span class="anrf"><img src="assets/anrf-logo.webp" alt="Anusandhan National Research Foundation (ANRF)" width="800" height="357" loading="lazy"></span>
-        </div>
-      </div>
-      <div>
-        <span class="mono gold">ICAIACI–2027 Conference Secretariat</span>
-        <address style="margin-top:.6rem">Yenepoya Institute of Technology<br>N.H. 13, Thodar, Vidyanagar<br>Moodbidri, Mangaluru<br>Dakshina Kannada, Karnataka – 574225<br>India</address>
-        <a class="btn" style="margin-top:1rem" href="https://www.google.com/maps/search/?api=1&amp;query=Yenepoya+Institute+of+Technology+Moodbidri" target="_blank" rel="noopener">Open in Maps</a>
-      </div>
-      <div>
-        <span class="mono gold">Enquiries</span>
-        <p class="muted" style="margin-top:.6rem">For conference-related enquiries, official contact details will be published here.</p>
-        <p style="margin-top:1rem"><b>28–29 January 2027</b><br><span class="muted">Moodbidri, Karnataka, India</span></p>
-      </div>
-    </div>
-    <div class="legal">
-      <span>© 2027 ICAIACI. All Rights Reserved.</span>
-      <a href="#top">Back to top ↑</a>
-    </div>
+    <p class="eyebrow">Get in touch</p>
+    <h2>Contact</h2>
+    <p><b>ICAIACI–2027 Conference Secretariat</b><br>Yenepoya Institute of Technology<br>N.H. 13, Thodar, Vidyanagar, Moodbidri, Mangaluru<br>Dakshina Kannada, Karnataka – 574225, India</p>
+    <p><b>Information &amp; Contact Chair:</b> Dr. Shahabaz S. M.</p>
+    <p><b>Email:</b> <a href="mailto:anrf.icaiaci2027@yit.edu.in">anrf.icaiaci2027@yit.edu.in</a></p>
+    <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Yenepoya+Institute+of+Technology+Moodbidri" target="_blank" rel="noopener">Open location in Google Maps</a>
+    <p class="small">ICAIACI–2027 · International Conference on Artificial Intelligence and Advanced Computational Intelligence · 28–29 January 2027<br>Sponsored by Anusandhan National Research Foundation (ANRF) · File No. SSY/2026/001544<br>© 2027 ICAIACI. All Rights Reserved.</p>
   </div>
 </footer>
 
 <script>
-// countdown to the inaugural ceremony (IST)
-const start = new Date('2027-01-28T09:30:00+05:30');
-const cd = document.getElementById('countdown');
-const units = { d: 86400000, h: 3600000, m: 60000, s: 1000 };
-function tick() {
-  let ms = Math.max(0, start - Date.now());
-  for (const [k, v] of Object.entries(units)) {
-    cd.querySelector(`[data-u="${k}"]`).textContent = String(Math.floor(ms / v)).padStart(2, '0');
-    ms %= v;
+// Flag the next open deadline and mark passed ones, using the visitor's local date.
+const today = new Date().toLocaleDateString('en-CA');
+let found = false;
+for (const li of document.querySelectorAll('.dates li[data-due]')) {
+  const badge = li.querySelector('.badge');
+  if (li.dataset.due < today) { li.classList.add('past'); badge.textContent = 'Closed'; }
+  else if (!found) {
+    found = true; li.classList.add('next');
+    const days = Math.round((new Date(li.dataset.due) - new Date(today)) / 864e5);
+    badge.textContent = days ? `Next deadline · ${days} day${days > 1 ? 's' : ''} left` : 'Due today';
   }
 }
-tick(); setInterval(tick, 1000);
-
-// mobile menu
-const btn = document.querySelector('.menu-btn'), menu = document.getElementById('menu');
-btn.addEventListener('click', () => btn.setAttribute('aria-expanded', menu.classList.toggle('open')));
-menu.addEventListener('click', e => { if (e.target.tagName === 'A') { menu.classList.remove('open'); btn.setAttribute('aria-expanded', false); } });
-
-// reveal on scroll + highlight the nav link of the section in view
-const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-const links = [...menu.querySelectorAll('a')];
-const spy = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) links.forEach(a => a.classList.toggle('active', a.hash === '#' + e.target.id));
-}), { rootMargin: '-45% 0px -50% 0px' });
-document.querySelectorAll('main section[id], footer[id]').forEach(s => spy.observe(s));
 </script>
+
 </body>
 </html>
