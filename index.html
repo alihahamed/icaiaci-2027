@@ -99,6 +99,9 @@ h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; font-weight: 700;
 /* sections */
 section { padding: 5rem 0; }
 section.alt { background: var(--tint); }
+/* keep white/tint alternating while the programme is hidden */
+#programme[hidden] ~ section { background: var(--tint); }
+#programme[hidden] ~ section.alt { background: var(--paper); }
 .eyebrow { text-align: center; font-size: 1rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); }
 h2 { text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-top: .3rem; }
 h2::after { content: ""; display: block; width: 64px; height: 3px; border-radius: 3px; background: var(--gold); margin: 1rem auto 2.2rem; }
@@ -274,7 +277,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
       <li><a href="#submission">Submission</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#speakers">Speakers</a></li>
-      <li><a href="#programme">Programme</a></li>
+      <!-- <li><a href="#programme">Programme</a></li> -->
       <li><a href="#committee">Committee</a></li>
       <li><a href="#dates">Dates</a></li>
       <li><a href="#registration">Registration</a></li>
@@ -464,7 +467,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="programme" class="alt">
+  <section id="programme" class="alt" hidden><!-- temporarily hidden; remove `hidden` to restore -->
     <div class="wrap narrow">
       <p class="eyebrow">Schedule</p>
       <h2>Technical Programme</h2>
