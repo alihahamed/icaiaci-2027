@@ -82,7 +82,7 @@ h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; font-weight: 700;
 .hero .logos, .hero .acr, .hero h1, .hero .chips, .hero .ctas, .stats { animation: up .8s cubic-bezier(.2,.7,.2,1) both; }
 .hero .acr { animation-delay: .1s; } .hero h1 { animation-delay: .2s; } .hero .chips { animation-delay: .32s; } .hero .ctas { animation-delay: .44s; } .stats { animation-delay: .56s; }
 @supports (animation-timeline: view()) {
-  main h2, main h3, main .eyebrow, .narrow > p, .ticks li, .numbered li, .pills, .track, .speakers li, .tl, .feat, .facts li, .step, .awards li, .patrons li, .roles li, .people li, .dates li, .fee, .note {
+  main h2, main h3, main .eyebrow, .narrow > p, .ticks li, .numbered li, .pills, .track, .tl, .feat, .facts li, .step, .awards li, .patrons li, .roles li, .people li, .dates li, .fee, .note {
     animation: up linear both; animation-timeline: view(); animation-range: entry 0% entry 45%; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -99,9 +99,6 @@ h1 { font-size: clamp(2rem, 4.6vw, 3.4rem); line-height: 1.15; font-weight: 700;
 /* sections */
 section { padding: 5rem 0; }
 section.alt { background: var(--tint); }
-/* keep white/tint alternating while the programme is hidden */
-#programme[hidden] ~ section { background: var(--tint); }
-#programme[hidden] ~ section.alt { background: var(--paper); }
 .eyebrow { text-align: center; font-size: 1rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--teal); }
 h2 { text-align: center; font-size: clamp(1.9rem, 3.4vw, 2.6rem); font-weight: 700; color: var(--navy); line-height: 1.2; margin-top: .3rem; }
 h2::after { content: ""; display: block; width: 64px; height: 3px; border-radius: 3px; background: var(--gold); margin: 1rem auto 2.2rem; }
@@ -142,14 +139,7 @@ h3.center { text-align: center; }
 .links a::after { content: "↗"; color: var(--teal); }
 .links a:hover { border-color: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(11,34,87,.1); }
 
-/* speakers */
-.speakers { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; margin-top: 2rem; }
-.speakers li { display: grid; grid-template-columns: 64px 1fr; gap: 1.1rem; padding: 1.4rem 0; border-top: 1px solid var(--rule); text-align: left; }
 .av { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 700; font-size: 1.35rem; background: linear-gradient(135deg, var(--navy), var(--teal)); }
-.key .av { background: linear-gradient(135deg, #b47c0c, var(--gold)); }
-.speakers b { display: block; font-size: 1.3rem; color: var(--navy); line-height: 1.35; }
-.speakers .exp { display: block; color: var(--muted); margin-top: .2rem; }
-.talk { display: inline-block; margin-top: .6rem; padding: .2rem .8rem; border-radius: 6px; background: #fbf0d4; color: var(--gold-text); font-weight: 700; font-size: 1.08rem; }
 
 /* programme timeline */
 .day { margin-top: 2.5rem; }
@@ -234,9 +224,7 @@ footer .small { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var
 .tags li, .pills li { transition-property: background-color, color, border-color; transition-duration: .2s; }
 .tags li:hover { background: #fff; border-color: var(--teal); color: var(--teal); }
 .pills li:hover { background: var(--teal); }
-.speakers li .av { transition: transform .25s ease-out; }
-.speakers li:hover .av { transform: scale(1.08) rotate(-4deg); }
-h2, h3, .speakers b, .roles b { text-wrap: balance; }
+h2, h3, .roles b { text-wrap: balance; }
 .stats b, td.money, .tl .time { font-variant-numeric: tabular-nums; }
 
 @media (max-width: 900px) {
@@ -259,7 +247,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
   .stats div:nth-child(3) { border-left: 0; }
   .stats b { font-size: 2.1rem; }
   section { padding: 3.5rem 0; }
-  .ticks, .numbered, .tracks, .speakers, .feats, .feats.three, .people, .awards, .patrons, .facts, .steps { grid-template-columns: 1fr; }
+  .ticks, .numbered, .tracks, .feats, .feats.three, .people, .awards, .patrons, .facts, .steps { grid-template-columns: 1fr; }
   .tl { padding: .5rem 1.2rem; }
   .tl > li { grid-template-columns: 1fr; gap: .2rem; }
   th, td { padding: .75rem .8rem; }
@@ -276,7 +264,6 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
       <li><a href="#papers">Call for Papers</a></li>
       <li><a href="#submission">Submission</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#speakers">Speakers</a></li>
       <!-- <li><a href="#programme">Programme</a></li> -->
       <li><a href="#committee">Committee</a></li>
       <li><a href="#dates">Dates</a></li>
@@ -310,7 +297,7 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
   <div class="stats">
     <div><b>2</b><span>Days</span></div>
     <div><b>3</b><span>Technical Tracks</span></div>
-    <div><b>13</b><span>Confirmed Speakers</span></div>
+    <div><b>~100</b><span>Papers for Presentation</span></div>
     <div><b>~500</b><span>Expected Submissions</span></div>
   </div>
 </div>
@@ -444,29 +431,6 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
     </div>
   </section>
 
-  <section id="speakers">
-    <div class="wrap">
-      <p class="eyebrow">Speakers</p>
-      <h2>Keynote Speakers &amp; Resource Persons</h2>
-      <p class="center">ICAIACI–2027 brings together eminent academicians, researchers, and industry professionals from India and abroad.</p>
-      <ul class="speakers">
-        <li class="key"><span class="av" aria-hidden="true">DD</span><div><b>Dr. Debabrata Das</b>Director, International Institute of Information Technology Bangalore<span class="exp">Expertise: AI, IoT, Wireless Networks, Smart Cities</span><span class="talk">Keynote Address 1: AI, IoT and Smart Cities</span></div></li>
-        <li class="key"><span class="av" aria-hidden="true">BR</span><div><b>Dr. Balaraman Ravindran</b>Professor, Department of Computer Science &amp; Engineering, IIT Madras, Chennai<span class="exp">Expertise: Reinforcement Learning, Deep Learning, AI</span><span class="talk">Keynote Address 2: Reinforcement Learning and Foundation Models</span></div></li>
-        <li class="key"><span class="av" aria-hidden="true">DŠ</span><div><b>Prof. Dejan Šeatović</b>Professor for Measurement Technology and Mechatronics, ISF – Institute for Intelligent Systems and Smart Farming, Rapperswil, Switzerland<span class="exp">Expertise: Artificial Intelligence (AI) for Intelligent Systems, Smart Farming &amp; Precision Agriculture</span><span class="talk">Keynote Address 3: Intelligent Systems, Smart Farming &amp; Robotics</span></div></li>
-        <li class="key"><span class="av" aria-hidden="true">TM</span><div><b>Dr. Thangavel Murugan</b>Assistant Professor, Department of Information Systems and Security, College of Information Technology, UAE University<span class="exp">Expertise: Information Security and Cybersecurity</span><span class="talk">Keynote Address 4: AI for Cybersecurity and Digital Forensics</span></div></li>
-        <li><span class="av" aria-hidden="true">KP</span><div><b>Dr. Keerthana Prasad</b>Professor &amp; Director, Manipal School of Information Sciences, Manipal Academy of Higher Education, Manipal<span class="exp">Expertise: Artificial Intelligence, Machine Learning, Data Analytics</span></div></li>
-        <li><span class="av" aria-hidden="true">RG</span><div><b>Dr. Ram Mohana Reddy Guddeti</b>Professor, Department of Information Technology, National Institute of Technology Karnataka, Surathkal<span class="exp">Expertise: Artificial Intelligence, Big Data Analytics, Cloud Computing, IoT</span></div></li>
-        <li><span class="av" aria-hidden="true">AJ</span><div><b>Mr. Arun Joseph</b>Software Developer, Google, United Kingdom<span class="exp">Expertise: AI-Powered Applications, Machine Learning</span></div></li>
-        <li><span class="av" aria-hidden="true">N</span><div><b>Dr. Nedunchelian</b>Dean – School of Computing, Rajalakshmi Institute of Technology, Chennai, Tamil Nadu<span class="exp">Expertise: Machine Learning Models</span></div></li>
-        <li><span class="av" aria-hidden="true">GS</span><div><b>Dr. G. Suganya</b>Professor &amp; Associate Dean, School of Computer Science and Engineering, VIT Chennai<span class="exp">Expertise: Generative AI, Agentic AI</span></div></li>
-        <li><span class="av" aria-hidden="true">PS</span><div><b>Dr. P. Shanthi</b>Assistant Professor, CEG, Anna University, Chennai<span class="exp">Expertise: Agentic AI, Machine Learning</span></div></li>
-        <li><span class="av" aria-hidden="true">F</span><div><b>Mr. Felix</b>CEO, Rafaniel Christen Technologies, Tamil Nadu<span class="exp">Expertise: Data Science, Full Stack App Development</span></div></li>
-        <li><span class="av" aria-hidden="true">KS</span><div><b>Mr. Kalyan Sivakumar</b>Senior Staff Engineer, Uber India Technology Private Ltd., Bangalore<span class="exp">Expertise: Data Science, Enterprise Warehouse Integration, Creation of Power BI</span></div></li>
-        <li><span class="av" aria-hidden="true">RR</span><div><b>Dr. Rajesh Raju</b>Professor &amp; Director, CIODS; CHIEM; OMICS Analytics Pvt Ltd; Professor (CSBMM), Yenepoya Deemed University<span class="exp">Expertise: Data Science, Quantum Computing</span></div></li>
-      </ul>
-    </div>
-  </section>
-
   <section id="programme" class="alt" hidden><!-- temporarily hidden; remove `hidden` to restore -->
     <div class="wrap narrow">
       <p class="eyebrow">Schedule</p>
@@ -583,6 +547,17 @@ h2, h3, .speakers b, .roles b { text-wrap: balance; }
         <li><b>Dr. Sreesha S.</b><span>Professor, Manipal University</span></li>
         <li><b>Dr. Sishaj P. Simon</b><span>NIT Trichy</span></li>
         <li><b>Dr. Mohammed Javed</b><span>IIIT Allahabad</span></li>
+        <li><b>Prof. Dejan Šeatović</b><span>Professor for Measurement Technology and Mechatronics, ISF – Institute for Intelligent Systems and Smart Farming, Rapperswil, Switzerland</span></li>
+        <li><b>Dr. Thangavel Murugan</b><span>Assistant Professor, Department of Information Systems and Security, College of Information Technology, UAE University</span></li>
+        <li><b>Dr. Keerthana Prasad</b><span>Professor &amp; Director, Manipal School of Information Sciences, Manipal Academy of Higher Education, Manipal</span></li>
+        <li><b>Dr. Ram Mohana Reddy Guddeti</b><span>Professor, Department of Information Technology, National Institute of Technology Karnataka, Surathkal</span></li>
+        <li><b>Mr. Arun Joseph</b><span>Software Developer, Google, United Kingdom</span></li>
+        <li><b>Dr. Nedunchelian</b><span>Dean – School of Computing, Rajalakshmi Institute of Technology, Chennai, Tamil Nadu</span></li>
+        <li><b>Dr. G. Suganya</b><span>Professor &amp; Associate Dean, School of Computer Science and Engineering, VIT Chennai</span></li>
+        <li><b>Dr. P. Shanthi</b><span>Assistant Professor, CEG, Anna University, Chennai</span></li>
+        <li><b>Mr. Felix</b><span>CEO, Rafaniel Christen Technologies, Tamil Nadu</span></li>
+        <li><b>Mr. Kalyan Sivakumar</b><span>Senior Staff Engineer, Uber India Technology Private Ltd., Bangalore</span></li>
+        <li><b>Dr. Rajesh Raju</b><span>Professor &amp; Director, CIODS; CHIEM; OMICS Analytics Pvt Ltd; Professor (CSBMM), Yenepoya Deemed University</span></li>
       </ul>
     </div>
   </section>
