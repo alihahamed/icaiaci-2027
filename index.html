@@ -133,7 +133,15 @@ h3.center { text-align: center; }
 .facts span { display: block; margin-top: .3rem; color: var(--muted); font-size: 1.05rem; line-height: 1.4; }
 .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 .step h3 { margin: 2rem 0 .5rem; }
-.soon { display: inline-block; margin-top: .8rem; padding: .2rem .9rem; border-radius: 999px; background: #fbf0d4; color: var(--gold-text); font-weight: 700; font-size: .95rem; letter-spacing: .06em; text-transform: uppercase; }
+.cfp { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; align-items: center; }
+.poster { display: block; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 4px rgba(11,34,87,.06), 0 18px 44px rgba(11,34,87,.16); transition: transform .25s ease-out; }
+.poster:hover { transform: translateY(-4px) rotate(-.4deg); }
+.poster img { display: block; width: 100%; height: auto; }
+.journals { counter-reset: j; margin: 1.2rem 0 1.5rem; padding: .3rem 1.6rem; background: #fff; border-radius: 16px; box-shadow: 0 1px 2px rgba(11,34,87,.05), 0 8px 24px rgba(11,34,87,.07); }
+.journals li { counter-increment: j; display: flex; gap: 1.2rem; align-items: center; padding: .8rem 0; border-bottom: 1px solid var(--rule); font-weight: 700; color: var(--navy); text-align: left; }
+.journals li:last-child { border-bottom: 0; }
+.journals li::before { content: counter(j, decimal-leading-zero); flex: none; width: 2.4rem; height: 2.4rem; display: grid; place-items: center; border-radius: 50%; background: var(--tint); color: var(--teal); font-size: 1rem; font-variant-numeric: tabular-nums; }
+.note .ticks { margin-top: .8rem; }
 .links { display: grid; gap: .6rem; margin-top: 1rem; }
 .links a { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: .75rem 1.1rem; border-radius: 12px; background: #fff; border: 1px solid var(--rule); color: var(--navy); font-weight: 700; text-decoration: none; transition-property: border-color, transform, box-shadow; transition-duration: .2s; transition-timing-function: ease-out; }
 .links a::after { content: "↗"; color: var(--teal); }
@@ -178,6 +186,7 @@ h3.center { text-align: center; }
 .roles li { display: flex; flex-direction: column; justify-content: center; text-align: center; background: #fff; border-radius: 14px; padding: 1.2rem .8rem; box-shadow: 0 6px 20px rgba(11,34,87,.07); }
 .roles small { display: block; color: var(--teal); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; font-size: .9rem; line-height: 1.4; }
 .roles b { display: block; color: var(--navy); font-size: 1.2rem; margin-top: .4rem; }
+.roles b + b { margin-top: .1rem; }
 .people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 2.5rem; }
 .people li { padding: 1rem 0; border-top: 1px solid #d5dbe7; text-align: left; }
 .people b { display: block; color: var(--navy); font-size: 1.2rem; }
@@ -247,7 +256,7 @@ h2, h3, .roles b { text-wrap: balance; }
   .stats div:nth-child(3) { border-left: 0; }
   .stats b { font-size: 2.1rem; }
   section { padding: 3.5rem 0; }
-  .ticks, .numbered, .tracks, .feats, .feats.three, .people, .awards, .patrons, .facts, .steps { grid-template-columns: 1fr; }
+  .cfp, .ticks, .numbered, .tracks, .feats, .feats.three, .people, .awards, .patrons, .facts, .steps { grid-template-columns: 1fr; }
   .tl { padding: .5rem 1.2rem; }
   .tl > li { grid-template-columns: 1fr; gap: .2rem; }
   th, td { padding: .75rem .8rem; }
@@ -307,9 +316,13 @@ h2, h3, .roles b { text-wrap: balance; }
     <div class="wrap">
       <p class="eyebrow">Submit your research</p>
       <h2>Call for Papers</h2>
-      <div class="narrow">
+      <div class="cfp">
+       <div>
         <p>ICAIACI–2027 invites researchers, academicians, industry professionals, research scholars, and students to submit original and innovative research contributions related to Artificial Intelligence, Computational Intelligence, and emerging intelligent technologies.</p>
         <p>Prospective authors are invited to submit papers addressing theoretical developments, experimental studies, innovative applications, emerging technologies, and interdisciplinary solutions relevant to the conference tracks.</p>
+        <p><a class="btn" href="https://cmt3.research.microsoft.com/ICAIACI2027" target="_blank" rel="noopener">Submit your paper via CMT</a> <a class="btn ghost" href="assets/icaiaci-cfp.webp" download>Download the Call for Papers</a></p>
+       </div>
+        <a class="poster" href="assets/icaiaci-cfp.webp" target="_blank" rel="noopener"><img src="assets/icaiaci-cfp.webp" alt="ICAIACI–2027 Call for Papers poster" width="1024" height="1536" loading="lazy"></a>
       </div>
 
       <h3 class="center">Conference Themes</h3>
@@ -361,8 +374,8 @@ h2, h3, .roles b { text-wrap: balance; }
       <div class="steps">
         <div class="step">
           <h3>Where to Submit</h3>
-          <p>The CMT submission link will be available soon.</p>
-          <span class="soon">Coming soon</span>
+          <p>Papers are submitted through the Microsoft CMT portal for ICAIACI–2027.</p>
+          <p><a class="btn" href="https://cmt3.research.microsoft.com/ICAIACI2027" target="_blank" rel="noopener">Submit on Microsoft CMT</a></p>
         </div>
         <div class="step">
           <h3>How to Submit</h3>
@@ -372,6 +385,27 @@ h2, h3, .roles b { text-wrap: balance; }
             <li><a href="https://cmt3.research.microsoft.com/docs/help/author/author-submission-form.html" target="_blank" rel="noopener">Instructions for submitting a paper</a></li>
           </ul>
         </div>
+      </div>
+      <h3>Publication Opportunities</h3>
+      <p>Following the paper presentation at the conference, selected extended versions of high-quality papers will be considered for submission to the following Springer Nature journals:</p>
+      <ol class="journals">
+        <li>International Journal of Machine Learning and Cybernetics</li>
+        <li>Discover Computing</li>
+        <li>Discover Artificial Intelligence</li>
+        <li>Discover Internet of Things</li>
+        <li>Scientific Reports</li>
+        <li>Neural Networks</li>
+        <li>Machine Learning</li>
+      </ol>
+      <p>The conference Publication Committee will facilitate the manuscript submission process for the selected extended papers.</p>
+      <div class="note">
+      <b>Please note:</b>
+      <ul class="ticks one">
+        <li>Publication in the above journals is subject to the respective journal's scope, editorial policies, peer-review process, and final acceptance.</li>
+        <li>Journal publication charges, including Article Processing Charges (APCs), wherever applicable, will be borne separately by the authors.</li>
+        <li>Any subsequent manuscript revisions, responses to reviewer comments, and publication-related charges will be the responsibility of the respective authors.</li>
+        <li>The Publication Committee will provide assistance with the submission process; however, acceptance and publication of the manuscripts cannot be guaranteed.</li>
+      </ul>
       </div>
       <p class="note"><b>Acknowledgement:</b> The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.</p>
     </div>
@@ -523,7 +557,7 @@ h2, h3, .roles b { text-wrap: balance; }
         <li><small>Organizing Secretary</small><b>Dr. Harun Bengali</b></li>
         <li><small>Technical Program Co-Chair</small><b>Dr. Rameesa K.</b></li>
         <li><small>Publicity &amp; Media Chair</small><b>Dr. Shashank M Gowda</b></li>
-        <li><small>Registration Chair</small><b>Mrs. Deeksha K. R.</b></li>
+        <li><small>Registration Chairs</small><b>Mrs. Deeksha K. R.</b><b>Mrs. Jayashri P</b></li>
         <li><small>Sponsorship &amp; Industry Relations Chair</small><b>Dr. Prasanna Kumar</b></li>
         <li><small>Venue &amp; Logistics Chair</small><b>Dr. Manish Prajapati</b></li>
         <li><small>Website &amp; Digital Communications Chair</small><b>Mr. Hemanth N G</b></li>
@@ -568,7 +602,6 @@ h2, h3, .roles b { text-wrap: balance; }
       <p class="eyebrow">Mark your calendar</p>
       <h2>Important Dates</h2>
       <ol class="dates">
-        <li data-due="2026-11-20"><span class="ev">Abstract Submission</span><span class="badge"></span><time datetime="2026-11-20">Friday, 20 November 2026</time></li>
         <li data-due="2026-12-15"><span class="ev">Full-Length Paper Submission</span><span class="badge"></span><time datetime="2026-12-15">Tuesday, 15 December 2026</time></li>
         <li data-due="2027-01-05"><span class="ev">Notification of Acceptance</span><span class="badge"></span><time datetime="2027-01-05">Tuesday, 5 January 2027</time></li>
         <li data-due="2027-01-19"><span class="ev">Registration Deadline</span><span class="badge"></span><time datetime="2027-01-19">Tuesday, 19 January 2027</time></li>
@@ -578,7 +611,7 @@ h2, h3, .roles b { text-wrap: balance; }
 
       <h3>Paper Submission</h3>
       <p>Authors are invited to submit original research contributions relevant to the conference themes and tracks. Detailed information regarding paper format, page limit, submission portal, review procedure, camera-ready submission and publication requirements will be announced separately.</p>
-      <p><b>Paper Submission Portal:</b> Microsoft CMT — the submission link will be available soon. See the <a href="#submission">Submission Guidelines</a>.</p>
+      <p><b>Paper Submission Portal:</b> <a href="https://cmt3.research.microsoft.com/ICAIACI2027" target="_blank" rel="noopener">Microsoft CMT</a>. See the <a href="#submission">Submission Guidelines</a>.</p>
 
       <h3>Expected Participation</h3>
       <p>ICAIACI–2027 aims to attract researchers, academicians, scientists, industry professionals, research scholars, and students from India and abroad. The conference anticipates approximately 500 research paper submissions, with around 100 papers expected to be selected for presentation.</p>
@@ -601,6 +634,7 @@ h2, h3, .roles b { text-wrap: balance; }
           </tbody>
         </table>
       </div>
+      <p class="note"><b>Registration Fee:</b> The registration fee is subject to revision depending on the publication options and charges finalized by the respective publishers. Any changes will be communicated on the official conference website after formal confirmation from the publishers.</p>
 
       <h3>Registration Guidelines</h3>
       <ul class="ticks one">
@@ -612,7 +646,7 @@ h2, h3, .roles b { text-wrap: balance; }
         <li>IEEE Xplore® publication and Springer proceedings publication are not guaranteed unless formally approved and confirmed by the respective publisher.</li>
         <li>Registration fees are non-refundable, subject to the conference's published cancellation policy.</li>
       </ul>
-      <p class="note"><b>Publication Note:</b> The conference is exploring publication opportunities with IEEE and Springer Nature. Further details will be announced on the official conference website after formal confirmation.</p>
+      <p class="note"><b>Publication Note:</b> The conference is exploring publication opportunities with reputed Scopus-indexed journals and other recognized academic publishers. Publication details will be announced on the official conference website upon formal confirmation from the respective publishers. Publication charges, if applicable, will be communicated separately and collected only after confirmation of acceptance by the respective publishers.</p>
     </div>
   </section>
 
